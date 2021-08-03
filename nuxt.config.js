@@ -1,9 +1,5 @@
-
 export default {
-    mode: 'universal',
-    /*
-    ** Headers of the page
-    */
+    target: 'static',
     head: {
         title: 'Joakim Sjöbäck',
         meta: [
@@ -34,16 +30,12 @@ export default {
 
     plugins: [
         '@/plugins/globalComponents',
-        '@/plugins/directives.js'
+        '@/node_modules/@swegaming-ab/vue-directive'
     ],
-    /*
-    ** Nuxt.js dev-modules
-    */
+
     buildModules: [
     ],
-    /*
-    ** Nuxt.js modules
-    */
+
     modules: [
         '@nuxtjs/style-resources'
     ],
@@ -52,13 +44,8 @@ export default {
             'assets/scss/main.scss'
         ]
     },
-    /*
-    ** Build configuration
-    */
+
     build: {
-        /*
-        ** You can extend webpack config here
-        */
         extend (config, ctx) {
         }
     }

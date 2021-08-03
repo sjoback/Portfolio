@@ -17,9 +17,8 @@ a, p, span {
 }
 p, .p {
     font-family: $font;
-    @media screen and (min-width: 600px){
-        font-size: 16px;
-    }
+    font-size: 16px;
+    line-height: 22px;
 }
 .f-14 {
     font-family: $font;

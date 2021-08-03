@@ -2,10 +2,12 @@
     <div class="main">
         <section class="banner">
             <div class="section--inner">
-                <p>Hi, my name is</p>
-                <h1>Joakim Sjöbäck.</h1>
+                <!-- <p>Hi, my name is</p> -->
+                <!-- <h1>Hi!</h1> -->
+                <h1>I'm Joakim Sjöbäck.</h1>
                 <h1>I design and build things for the web.</h1>
                 <p>I'm a front-end developer who dabbles in design. I focus on SEO and other stuffz.</p>
+                <p>Scroll down and feast your eyes!</p>
             </div>
         </section>
 
@@ -35,16 +37,7 @@ export default {
     .banner {
 
         .section--inner {
-
-            p:first-child {
-                margin-bottom: 10px;
-                margin-left: 10px;
-            }
-
-            p:last-child {
-                margin-top: 10px;
-                margin-left: 10px;
-            }
+            p { margin-top: 10px; }
         }
     }
 

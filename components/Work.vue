@@ -1,7 +1,15 @@
 <template>
     <div class="work">
-        <div class="mobile" v-for="( site, index ) in sites" :key="index">
-            <a :href="site.url" target="_blank" class="mobile-inner flex">
+        <div
+            class="mobile"
+            v-for="( site, index ) in sites"
+            :key="index"
+        >
+            <a
+                :href="site.url"
+                target="_blank"
+                class="mobile-inner flex"
+            >
                 <h5>{{ site.name }}</h5>
             </a>
         </div>
@@ -58,7 +66,7 @@ export default {
         height: 320px;
         background: #000;
         box-sizing: border-box;
-        padding: 10px;
+        padding: 7px;
 
         &-inner {
             text-align: center;
@@ -67,7 +75,7 @@ export default {
             padding-top: 30px;
             background: #333;
             height: 100%;
-            border-radius: 11px;
+            border-radius: 13px;
             position: relative;
             color: white;
 
