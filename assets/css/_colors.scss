@@ -1,0 +1,19 @@
+$main: #0d7254;
+$off: #68edc6;
+$white: #ffffff;
+$bxs: 0 52px 74px rgba(0,0,0,.12);
+$black: #111;
+
+
+.bxs { box-shadow: $bxs; }
+.green { color: $main!important; }
+.lgreen { color: $off!important; }
+.white { color: $white; }
+.black { color: $black; }
+
+
+.bg {
+    &-mgray { background: #191919; }
+    &-white { background: $white; }
+    &-opac { background: rgba(255, 255, 255, .25); }
+}

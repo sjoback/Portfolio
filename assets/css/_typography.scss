@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@700&family=Thasadith:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=WindSong&display=swap');
+
+$a: 'Yeseva One', cursive;
+
+$font: 'Lato', sans-serif;
+
+
+h1, h2, h3, h4, h5 {
+    font-family: $a;
+    font-weight: bold;
+}
+
+a, p, span {
+    font-family: $font;
+}
+p, .p {
+    font-family: $font;
+    @media screen and (min-width: 600px){
+        font-size: 16px;
+    }
+}
+.f-14 {
+    font-family: $font;
+    font-size: 14px;
+}
+.upper {
+    text-transform: uppercase;
+    text-transform: capitalize;
+}
+
+h1 {
+    font-size: 52px;
+    line-height: 58px;
+
+    @media screen and (min-width: 600px){
+        font-size: 72px;
+        line-height: 78px;
+    }
+}
+
+h2 {
+    font-size: 42px;
+    line-height: 48px;
+
+    @media screen and (min-width: 600px){
+        font-size: 62px;
+        line-height: 68px;
+    }
+}
+
+h3, .h3 {
+    @media screen and (min-width: 600px){
+        font-size: 32px;
+    }
+}
+h4, .h4 {
+    @media screen and (min-width: 600px){
+        font-size: 24px;
+    }
+}
+h5, .h5 {
+    @media screen and (min-width: 600px){
+        font-size: 20px;
+    }
+}

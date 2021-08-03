@@ -1,0 +1,50 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+// Sections
+.section, section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    width: 100%;
+
+    &--inner {
+        width: 1000px;
+    }
+}
+
+section.banner {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.stretch {width:100%;}
+.width {
+    max-width: calc(100% - 40px);
+    &-s { width: 600px; }
+    &-m { width: 1000px; }
+    &-l { width: 1200px; }
+    &-xl { width: 1700px; }
+}
+.block { display: block; }
+.bxs {
+    box-shadow: $bxs;
+}
+
+.br {
+    &-5 {
+        border-radius: 5px;
+    }
+    &-10 {
+        border-radius: 10px;
+    }
+}
