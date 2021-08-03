@@ -1,5 +1,5 @@
 <template>
-    <div class="work">
+    <div class="work" v-animate="{ threshold: .5, animation: 'slide-up', duration: '.3s' }">
         <div
             class="mobile"
             v-for="( site, index ) in sites"
