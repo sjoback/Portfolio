@@ -1,18 +1,44 @@
 <template>
-    <div class="work" v-animate="{ threshold: .5, animation: 'slide-up', duration: '.3s' }">
-        <div
-            class="mobile"
-            v-for="( site, index ) in sites"
-            :key="index"
-        >
-            <a
-                :href="site.url"
-                target="_blank"
-                class="mobile-inner flex"
+    <div>
+        <div class="work" v-animate="{ threshold: .5, animation: 'slide-up', duration: '.3s' }">
+            <div
+                class="mobile"
+                v-for="( site, index ) in sites"
+                :key="index"
+                @click="openProject = site"
             >
-                <h5>{{ site.name }}</h5>
-            </a>
+                <div class="mobile-inner flex">
+                    <img :src="site.imageColor" :alt="openProject.name" class="color" />
+                    <img :src="site.imageBlack" :alt="openProject.name" class="black" />
+                </div>
+            </div>
         </div>
+
+        <transition name="fade">
+            <div class="open-project flex" v-if="openProject">
+                <div class="content flex">
+                    <div class="flex-1">
+                        <img :src="openProject.imageDesktop" :alt="openProject.name" class="desktop" />
+                    </div>
+                    <div class="flex-1">
+
+                        <a target="_blank" :href="openProject.url" v-html="openProject.name" />
+
+                        <div class="desc" v-html="openProject.desc" />
+
+                        <div class="stack flex">
+                            <div v-for="( tech, index ) in openProject.techStack" :key="index" class="container">{{ tech }}</div>
+                        </div>
+
+                        <div class="socials flex">
+                            <i class="fab fa-github-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overlay" @click="openProject = false" />
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -20,27 +46,58 @@
 export default {
     data() {
         return {
+            openProject: false,
             projects: [],
             sites: [
                 {
-                    name: 'BettingGuide',
-                    url: 'https://www.bettingguide.com'
+                    name: '<h3>Betting<span style="color: #509bf5;">Guide</span></h3>',
+                    url: 'https://www.bettingguide.com',
+                    imageColor: '/images/mobile-bg.png',
+                    imageBlack: '/images/mobile-bg-bw.png',
+                    imageDesktop: '/images/desktop-compary.png',
+                    github: '',
+                    techStack: ['HTML', 'CSS', 'NuxtJS', 'VueJS', 'Prismic'],
+                    desc: 'BettingGuide.com is a gambling site which compares different gambling offers. It also includes information regarding gambling in the different markets. The front-end is built upon the Prismic API using NuxtJS.'
                 },
                 {
                     name: 'Kreditkort',
-                    url: 'https://www.kreditkort.com'
+                    url: 'https://www.kreditkort.com',
+                    imageColor: '/images/mobile-kreditkort.png',
+                    imageBlack: '/images/mobile-kreditkort-bw.png',
+                    imageDesktop: '/images/mobile-bg-bw.png',
+                    github: '',
+                    techStack: 'HTML, CSS, NuxtJS, VueJS, Prismic',
+                    desc: ''
                 },
                 {
                     name: 'Compinero',
-                    url: 'https://www.compinero.com'
+                    url: 'https://www.compinero.com',
+                    imageColor: '/images/mobile-compinero.png',
+                    imageBlack: '/images/mobile-compinero-bw.png',
+                    imageDesktop: '/images/mobile-bg-bw.png',
+                    github: '',
+                    techStack: 'HTML, CSS, NuxtJS, VueJS, Prismic',
+                    desc: ''
                 },
                 {
-                    name: 'Lånen',
-                    url: 'https://www.lånen.se'
+                    name: 'Compary',
+                    url: 'https://www.compary.com',
+                    imageColor: '/images/mobile-compary.png',
+                    imageBlack: '/images/mobile-compary-bw.png',
+                    imageDesktop: '/images/mobile-bg-bw.png',
+                    github: '',
+                    techStack: 'HTML, CSS, NuxtJS, VueJS, Prismic',
+                    desc: ''
                 },
                 {
                     name: 'AlltOmKreditkort',
-                    url: 'https://www.alltomkreditkort.se'
+                    url: 'https://www.alltomkreditkort.se',
+                    imageColor: '/images/mobile-aok.png',
+                    imageBlack: '/images/mobile-aok-bw.png',
+                    imageDesktop: '/images/mobile-bg-bw.png',
+                    github: '',
+                    techStack: 'HTML, CSS, NuxtJS, VueJS, Prismic',
+                    desc: ''
                 }
             ]
         }
@@ -54,58 +111,120 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
 
-    .section--inner {
-        overflow: scroll;
-    }
-
     .mobile {
         margin: 20px;
         cursor: pointer;
         border-radius: 20px;
-        width: 180px;
+        width: 160px;
         height: 320px;
-        background: #000;
-        box-sizing: border-box;
-        padding: 7px;
+        border: 7px solid #000;
+        transition: .15s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+        &:hover {
+            transform: scale(1.1);
+
+            img.black { display: none; }
+            img.color { display: block; }
+        }
 
         &-inner {
+            background-size: cover;
             text-align: center;
             box-sizing: border-box;
-            padding: 10px;
-            padding-top: 30px;
-            background: #333;
             height: 100%;
             border-radius: 13px;
             position: relative;
-            color: white;
+            overflow: hidden;
 
-            h5 {
-                margin-top: -40px;
+            img {
+                // background-size: cover;
+                width: 100%;
+                height: auto;
             }
 
-            &:after {
-                position: absolute;
-                content: "";
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 90px;
-                height: 17.5px;
-                background: #000;
-                border-bottom-left-radius: 10px;
-                border-bottom-right-radius: 10px;
-            }
+            img.color { display: none; }
         }
 
-        &-content {
-            display: none;
-        }
+        &-content { display: none; }
 
         &:hover {
             .mobile-content {
                 display: block;
             }
         }
+    }
+}
+
+.open-project {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+
+    .content {
+        min-height: 300px;
+        width: 900px;
+        max-width: 100%;
+        position: relative;
+        z-index: 2;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding: 20px;
+        box-sizing: border-box;
+
+        img {
+            height: 300px;
+            width: auto;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        .flex-1:first-child {
+            padding-right: 20px;
+        }
+
+        a {
+            color: #000;
+            &:hover { text-decoration: underline; }
+        }
+
+        .stack {
+            width: 100%;
+            justify-content: flex-start;
+            margin-left: -5px;
+
+            .container {
+                background: #222;
+                color: #fff;
+                padding: 5px 7.5px;
+                border-radius: 3px;
+                margin: 5px;
+            }
+        }
+
+        .socials {
+            width: 100%;
+
+            i {
+                margin: 0 20px;
+                font-size: 42px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .overlay {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0, .25);
     }
 }
 </style>
