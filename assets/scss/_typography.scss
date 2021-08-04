@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5 {
     font-weight: bold;
 }
 
-a, p, span {
+a, p {
     font-family: $font;
 }
 p, .p {
@@ -50,8 +50,12 @@ h2 {
 }
 
 h3, .h3 {
+    font-size: 32px;
+    line-height: 38px;
+
     @media screen and (min-width: 600px){
-        font-size: 32px;
+        font-size: 52px;
+        line-height: 58px;
     }
 }
 h4, .h4 {
