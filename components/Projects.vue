@@ -2,14 +2,12 @@
     <div>
         <div class="work" v-animate="{ threshold: .5, animation: 'slide-up', duration: '.3s' }">
             <div
-                class="mobile"
+                class="mobile flex"
                 v-for="( project, index ) in projects"
                 :key="index"
                 @click="openProject = project"
             >
-                <div class="mobile-inner flex">
-                    {{ project.name }}
-                </div>
+                <h4>{{ project.name }}</h4>
             </div>
         </div>
 
@@ -65,6 +63,8 @@ export default {
         border-top-left-radius: 0;
         width: 290px;
         height: 200px;
+        box-sizing: border-box;
+        padding: 20px;
         border: 7px solid #000;
         transition: .15s ease-in-out;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -81,6 +81,7 @@ export default {
             width: 100px;
             height: 35px;
             border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
             background: #000;
         }
     }
@@ -92,6 +93,7 @@ export default {
     left: 0;
     width: 100vw;
     height: 100vh;
+    z-index: 1;
 
     .content {
         min-height: 300px;
