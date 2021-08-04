@@ -2,8 +2,6 @@
     <div class="main">
         <section class="banner">
             <div class="section--inner">
-                <!-- <p>Hi, my name is</p> -->
-                <!-- <h1>Hi!</h1> -->
                 <h1>I'm Joakim Sjöbäck.</h1>
                 <h1>I design and build things for the web.</h1>
                 <p>I'm a front-end developer who dabbles in design. I focus on SEO and other stuffz.</p>
@@ -22,14 +20,17 @@
         <section>
             <div class="section--inner flex">
                 <h2>Other projects.</h2>
+
+                <Projects />
             </div>
         </section>
     </div>
 </template>
 <script>
 import Work from '@/components/Work.vue'
+import Projects from '@/components/Projects.vue'
 export default {
-    components: { Work }
+    components: { Work, Projects }
 }
 </script>
 <style lang="scss">
