@@ -29,7 +29,7 @@ export default {
     ],
 
     plugins: [
-        '@/plugins/globalComponents',
+        '@/plugins/directive',
         '@/node_modules/@swegaming-ab/vue-directive'
     ],
 

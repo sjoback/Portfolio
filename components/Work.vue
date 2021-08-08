@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <div class="work" v-animate="{ threshold: .5, animation: 'slide-up', duration: '.3s' }">
+    <div class="container">
+
+        <div class="work">
             <div
+                v-stagger="{ threshold: .5 }"
                 class="mobile"
                 v-for="( site, index ) in sites"
                 :key="index"
@@ -16,25 +18,38 @@
 
         <transition name="fade">
             <div class="open-project flex" v-if="openProject">
-                <div class="content flex">
-                    <div class="flex-1">
-                        <img :src="openProject.imageDesktop" :alt="openProject.name" class="desktop" />
-                    </div>
-                    <div class="flex-1">
+                <transition name="pop" appear>
+                    <div class="content flex">
+                        <a
+                            :href="openProject.url"
+                            class="flex-1"
+                            target="_blank"
+                        >
+                            <img
+                                :src="openProject.imageDesktop"
+                                :alt="openProject.name"
+                                class="desktop"
+                            />
+                        </a>
 
-                        <a target="_blank" :href="openProject.url" v-html="openProject.name" />
+                        <div class="flex-1">
+                            <div v-html="openProject.name" />
+                            <div class="stack flex">
+                                <div
+                                    v-for="( tech, index ) in openProject.techStack"
+                                    :key="index"
+                                    class="container"
+                                >
+                                    {{ tech }}
+                                </div>
+                            </div>
 
-                        <div class="desc" v-html="openProject.desc" />
-
-                        <div class="stack flex">
-                            <div v-for="( tech, index ) in openProject.techStack" :key="index" class="container">{{ tech }}</div>
+                            <div class="socials flex">
+                                <i class="fab fa-github-alt" />
+                            </div>
                         </div>
-
-                        <div class="socials flex">
-                            <i class="fab fa-github-alt"></i>
-                        </div>
                     </div>
-                </div>
+                </transition>
 
                 <div class="overlay" @click="openProject = false" />
             </div>
@@ -91,7 +106,7 @@ export default {
                 },
                 {
                     name: 'AlltOmKreditkort',
-                    url: 'https://www.alltomkreditkort.se',
+                    url: 'https://www.https://www.alltomkreditkort.se',
                     imageColor: '/images/mobile-aok.png',
                     imageBlack: '/images/mobile-aok-bw.png',
                     imageDesktop: '/images/mobile-bg-bw.png',
@@ -101,11 +116,35 @@ export default {
                 }
             ]
         }
+    },
+    mounted() {
+
+        document.addEventListener("keydown", (e) => {
+            if (e.keyCode == 27) {
+                this.openProject = false
+            }
+        });
     }
 }
 </script>
 
 <style lang="scss" scoped>
+.popper { animation: popper .25s forwards; }
+.popper:nth-child(2) { animation-delay: .10s; }
+.popper:nth-child(3) { animation-delay: .20s; }
+.popper:nth-child(4) { animation-delay: .30s; }
+.popper:nth-child(5) { animation-delay: .40s; }
+@keyframes popper {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 .work {
     display: flex;
     flex-wrap: wrap;
@@ -118,11 +157,11 @@ export default {
         width: 160px;
         height: 320px;
         border: 7px solid #000;
-        transition: .15s ease-in-out;
+        transition: .15s ease-in-out!important;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
         &:hover {
-            transform: scale(1.1);
+            margin-top: 10px;
 
             img.black { display: none; }
             img.color { display: block; }
@@ -138,7 +177,6 @@ export default {
             overflow: hidden;
 
             img {
-                // background-size: cover;
                 width: 100%;
                 height: auto;
             }
@@ -171,26 +209,24 @@ export default {
         position: relative;
         z-index: 2;
         background: #fff;
-        border-radius: 5px;
+        border-radius: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        padding: 20px;
+        padding: 40px;
         box-sizing: border-box;
+        align-items: flex-start;
 
         img {
             height: 300px;
             width: auto;
         }
 
-        span {
-            font-weight: bold;
-        }
+        span { font-weight: bold; }
 
-        .flex-1:first-child {
-            padding-right: 20px;
-        }
+        .flex-1:first-child { padding-right: 40px; }
 
         a {
             color: #000;
+
             &:hover { text-decoration: underline; }
         }
 
@@ -198,15 +234,17 @@ export default {
             width: 100%;
             justify-content: flex-start;
             margin-left: -5px;
+            margin-top: 20px;
 
             .container {
                 background: #222;
                 color: #fff;
-                padding: 5px 7.5px;
-                border-radius: 3px;
+                padding: 15px;
+                border-radius: 10px;
                 margin: 5px;
             }
         }
+        .desc { margin: 20px 0; }
 
         .socials {
             width: 100%;

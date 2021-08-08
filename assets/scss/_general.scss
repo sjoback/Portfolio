@@ -14,17 +14,20 @@ a {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 60px 20px;
+    padding: 100px 20px;
     width: 100%;
 
-    &--inner {
+    &-inner {
+        @extend .flex;
         width: 1000px;
+        max-width: 100%;
     }
 }
 
 section.banner {
-    padding-top: 180px;
-    padding-bottom: 180px;
+    height: 100vh;
+
+    .section-inner { justify-content: flex-start; }
 }
 
 .stretch {width:100%;}
@@ -36,9 +39,8 @@ section.banner {
     &-xl { width: 1700px; }
 }
 .block { display: block; }
-.bxs {
-    box-shadow: $bxs;
-}
+.fw { width: 100%; }
+.bxs { box-shadow: $bxs; }
 
 .br {
     &-5 {

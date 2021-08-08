@@ -14,20 +14,44 @@
 }
 
 .pop-enter-active {
-    animation: pop-in .3s;
+    animation: pop .5s;
 }
 .pop-leave-active {
-    animation: pop-in .3s reverse;
+    animation: pop .5s reverse;
 }
-@keyframes pop-in {
+@keyframes pop {
     0% {
+        opacity: 1;
         transform: scale(0);
     }
     50% {
         transform: scale(1.1);
+        opacity: 1;
     }
     100% {
         transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.nav-enter-active {
+    animation: nav .3s;
+}
+.nav-leave-active {
+    animation: nav .3s reverse;
+}
+@keyframes nav {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }
 

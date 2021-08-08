@@ -1,7 +1,8 @@
 <template>
     <div>
-        <div class="work" v-animate="{ threshold: .5, animation: 'slide-up', duration: '.3s' }">
+        <div class="work">
             <div
+                v-stagger="{ threshold: .5 }"
                 class="mobile flex"
                 v-for="( project, index ) in projects"
                 :key="index"
@@ -12,7 +13,7 @@
         </div>
 
         <transition name="fade">
-            <div class="open-project flex" v-if="openProject">
+            <div class="open-project flex" v-show="openProject">
                 <div class="content flex">
                     <div class="flex-1">
 
@@ -50,6 +51,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.popper { animation: popper .25s forwards; }
+.popper:nth-child(1) { animation-delay: .35s; }
+.popper:nth-child(2) { animation-delay: .4s; }
+.popper:nth-child(3) { animation-delay: .55s; }
+.popper:nth-child(4) { animation-delay: .70s; }
+.popper:nth-child(5) { animation-delay: .85s; }
+@keyframes popper {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 .work {
     display: flex;
     flex-wrap: wrap;

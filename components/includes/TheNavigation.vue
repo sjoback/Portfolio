@@ -1,14 +1,16 @@
 <template>
     <div class="nav" :class="{ scrolled: scrolled }">
-        <nuxt-link to="/" class="nav__logo">
-            <span>Joakim</span>
-            <span>Sjöbäck</span>
-        </nuxt-link>
+        <transition name="nav" appear>
+            <div class="nav-logo">
+                <span>Joakim</span>
+                <span>Sjöbäck</span>
+            </div>
+        </transition>
 
-        <ul class="nav__list">
+        <!-- <ul class="nav__list">
             <nuxt-link class="nav__list-link black p-20" to="/about">About</nuxt-link>
             <nuxt-link class="nav__list-link black p-20" to="/contact">Contact</nuxt-link>
-        </ul>
+        </ul> -->
         <!-- <ChatBot /> -->
     </div>
 </template>
@@ -36,25 +38,29 @@
     }
 </script>
 <style lang="scss">
-.nav.scrolled {
-    // box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
-    position: relative;
-}
+// .nav.scrolled {
+//     // box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+//     position: relative;
+// }
 
 .nav {
     display: flex;
     align-items: center;
     z-index: 2;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #fff;
+    z-index: 1;
     transition: .15s ease-in-out;
 
-    &__logo {
+    &-logo {
         padding: 20px;
         color: #000;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
+        border-radius: 20px;
+        margin: 10px 0 0 10px;
 
         span {
             font-size: 20px;
