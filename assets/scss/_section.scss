@@ -1,0 +1,35 @@
+.section, section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    width: 100%;
+
+    @include device(pad) {
+        padding: 100px 20px;
+    }
+
+    &-inner {
+        @include flex;
+        width: 1000px;
+        max-width: 100%;
+
+        h2 {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+section.banner {
+    min-height: 70vh;
+
+    @include device(pad) {
+        min-height: none;
+        height: 100vh;
+    }
+
+    .section-inner { justify-content: flex-start; }
+}

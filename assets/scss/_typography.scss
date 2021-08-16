@@ -2,38 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=WindSong&display=swap');
 
-$a: 'Yeseva One', cursive;
-
-$font: 'Lato', sans-serif;
-
-
 h1, h2, h3, h4, h5 {
     font-family: $a;
     font-weight: bold;
 }
 
-a, p {
+a {
     font-family: $font;
 }
-p, .p {
+
+p {
     font-family: $font;
     font-size: 16px;
     line-height: 22px;
-}
-.f-14 {
-    font-family: $font;
-    font-size: 14px;
-}
-.upper {
-    text-transform: uppercase;
-    text-transform: capitalize;
 }
 
 h1 {
     font-size: 52px;
     line-height: 58px;
 
-    @media screen and (min-width: 600px){
+    @include device(pad) {
         font-size: 72px;
         line-height: 78px;
     }
@@ -43,28 +31,28 @@ h2 {
     font-size: 42px;
     line-height: 48px;
 
-    @media screen and (min-width: 600px){
+    @include device(pad) {
         font-size: 62px;
         line-height: 68px;
     }
 }
 
-h3, .h3 {
+h3 {
     font-size: 32px;
     line-height: 38px;
 
-    @media screen and (min-width: 600px){
+    @include device(pad) {
         font-size: 52px;
         line-height: 58px;
     }
 }
-h4, .h4 {
-    @media screen and (min-width: 600px){
+h4 {
+    @include device(pad) {
         font-size: 24px;
     }
 }
-h5, .h5 {
-    @media screen and (min-width: 600px){
+h5 {
+    @include device(pad) {
         font-size: 20px;
     }
 }

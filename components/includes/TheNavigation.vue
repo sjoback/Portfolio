@@ -1,11 +1,11 @@
 <template>
     <div class="nav" :class="{ scrolled: scrolled }">
-        <transition name="nav" appear>
+        <!-- <transition name="nav" appear>
             <div class="nav-logo">
                 <span>Joakim</span>
                 <span>Sjöbäck</span>
             </div>
-        </transition>
+        </transition> -->
 
         <!-- <ul class="nav__list">
             <nuxt-link class="nav__list-link black p-20" to="/about">About</nuxt-link>

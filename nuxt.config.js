@@ -26,6 +26,7 @@ export default {
     loading: { color: '#fff' },
 
     css: [
+        'assets/scss/main.scss'
     ],
 
     plugins: [
@@ -34,6 +35,7 @@ export default {
     ],
 
     buildModules: [
+        '@nuxtjs/style-resources'
     ],
 
     modules: [
@@ -41,7 +43,10 @@ export default {
     ],
     styleResources: {
         scss: [
-            'assets/scss/main.scss'
+            '@/assets/scss/vars/_vars.scss',
+            '@/assets/scss/vars/_colors.scss',
+            '@/assets/scss/vars/_mixins.scss',
+            '@/node_modules/@swegaming-ab/base-css/src/mixins/main.scss'
         ]
     },
 

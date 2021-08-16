@@ -9,7 +9,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="section-work">
             <div class="section-inner">
                 <h2>The work.</h2>
 
@@ -61,19 +61,10 @@ export default {
         }
     }
 
-    .section-inner {
-        h2 {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-    }
-
     .avatar {
         position: relative;
 
         &-inner {
-            //image
             position: relative;
             background: #222;
             z-index: 2;
@@ -92,6 +83,24 @@ export default {
             top: 5px;
             left: 5px;
             background: #000;
+        }
+    }
+
+    .section-work {
+        @include device(mobile) {
+            position: relative;
+            padding-left: 0;
+            padding-right: 0;
+
+            @include psuedo {
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(255,255,255,1) 100%);
+                @include size(50px, 100%);
+            }
+
+            .section-inner { padding: 0;}
         }
     }
 </style>

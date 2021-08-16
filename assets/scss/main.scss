@@ -1,8 +1,7 @@
-@import '../../node_modules/@swegaming-ab/base-css/main.scss';
+@import '@/node_modules/@swegaming-ab/base-css/main.scss';
 
-@import 'vars';
-@import 'colors';
 @import 'typography';
 @import 'general';
 @import 'buttons';
 @import 'transitions';
+@import 'section';

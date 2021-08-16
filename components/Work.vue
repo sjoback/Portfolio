@@ -17,12 +17,17 @@
         </div>
 
         <transition name="fade">
-            <div class="open-project flex" v-if="openProject">
-                <transition name="pop" appear>
-                    <div class="content flex">
+            <div
+                v-if="openProject"
+                class="open-project"
+            >
+                <transition
+                    name="pop"
+                    appear
+                >
+                    <div class="content">
                         <a
                             :href="openProject.url"
-                            class="flex-1"
                             target="_blank"
                         >
                             <img
@@ -32,9 +37,9 @@
                             />
                         </a>
 
-                        <div class="flex-1">
+                        <div>
                             <div v-html="openProject.name" />
-                            <div class="stack flex">
+                            <div class="stack">
                                 <div
                                     v-for="( tech, index ) in openProject.techStack"
                                     :key="index"
@@ -44,14 +49,17 @@
                                 </div>
                             </div>
 
-                            <div class="socials flex">
+                            <!-- <div class="socials flex">
                                 <i class="fab fa-github-alt" />
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </transition>
 
-                <div class="overlay" @click="openProject = false" />
+                <div
+                    class="overlay"
+                    @click="openProject = false"
+                />
             </div>
         </transition>
     </div>
@@ -145,16 +153,29 @@ export default {
     }
 }
 
+.container {
+    width: 100%;
+}
+
 .work {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto;
+
+    @include device(mobile) {
+        @include spacing(padding, 10, right);
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     .mobile {
+        min-width: 160px;
+        width: 160px;
         margin: 20px;
         cursor: pointer;
         border-radius: 20px;
-        width: 160px;
         height: 320px;
         border: 7px solid #000;
         transition: .15s ease-in-out!important;
@@ -195,34 +216,40 @@ export default {
 }
 
 .open-project {
+    @include flex;
+    @include size(100vw, 100vh);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     z-index: 1;
 
     .content {
+        @include grid(1, 40px);
+        @include spacing(padding, 5);
         min-height: 300px;
         width: 900px;
-        max-width: 100%;
+        max-width: calc(100% - 40px);
         position: relative;
         z-index: 2;
         background: #fff;
         border-radius: 20px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        padding: 40px;
-        box-sizing: border-box;
         align-items: flex-start;
 
-        img {
-            height: 300px;
-            width: auto;
+        @include device(pad) {
+            @include grid(2, 40px);
         }
 
-        span { font-weight: bold; }
+        img {
+            @include size(100%, auto);
+        }
 
-        .flex-1:first-child { padding-right: 40px; }
+        @include device(pad) {
+            img { @include size(auto, 300px); }
+        }
+
+
+        span { font-weight: bold; }
 
         a {
             color: #000;
@@ -231,12 +258,13 @@ export default {
         }
 
         .stack {
+            @include flex(start);
             width: 100%;
-            justify-content: flex-start;
             margin-left: -5px;
             margin-top: 20px;
 
             .container {
+                width: auto;
                 background: #222;
                 color: #fff;
                 padding: 15px;
