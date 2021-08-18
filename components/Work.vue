@@ -1,22 +1,41 @@
 <template>
     <div class="container">
+        <div
+            v-for="(work, index) in data"
+            v-addClass="{threshold: .5, class: 'show'}"
+            class="mobile"
+            :class="{open: open === index}"
+            @click="open = index"
+            v-scroll-to="{
+                 el: '#work',
+                 duration: 300,
+                 force: true
+            }"
+        >
+            <div class="mobile-inner">
+                <img
+                    :src="data.imageColor"
+                    :alt="data.name"
+                    class="color"
+                />
 
-        <div class="work">
-            <div
-                v-stagger="{ threshold: .5 }"
-                class="mobile"
-                v-for="( site, index ) in sites"
-                :key="index"
-                @click="openProject = site"
-            >
-                <div class="mobile-inner flex">
-                    <img :src="site.imageColor" :alt="openProject.name" class="color" />
-                    <img :src="site.imageBlack" :alt="openProject.name" class="black" />
-                </div>
+                <img
+                    :src="data.imageBlack"
+                    :alt="data.name"
+                    class="black"
+                />
             </div>
         </div>
 
-        <transition name="fade">
+        <div
+            v-if="open !== false"
+            class="overlay"
+            @click="open = false"
+        />
+    </div>
+
+
+        <!-- <transition name="fade">
             <div
                 v-if="openProject"
                 class="open-project"
@@ -48,10 +67,6 @@
                                     {{ tech }}
                                 </div>
                             </div>
-
-                            <!-- <div class="socials flex">
-                                <i class="fab fa-github-alt" />
-                            </div> -->
                         </div>
                     </div>
                 </transition>
@@ -62,76 +77,28 @@
                 />
             </div>
         </transition>
-    </div>
+    </div> -->
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            openProject: false,
-            projects: [],
-            sites: [
-                {
-                    name: '<h3>Betting<span style="color: #509bf5;">Guide</span></h3>',
-                    url: 'https://www.bettingguide.com',
-                    imageColor: '/images/mobile-bg.png',
-                    imageBlack: '/images/mobile-bg-bw.png',
-                    imageDesktop: '/images/desktop-compary.png',
-                    github: '',
-                    techStack: ['HTML', 'CSS', 'NuxtJS', 'VueJS', 'Prismic'],
-                    desc: 'BettingGuide.com is a gambling site which compares different gambling offers. It also includes information regarding gambling in the different markets. The front-end is built upon the Prismic API using NuxtJS.'
-                },
-                {
-                    name: 'Kreditkort',
-                    url: 'https://www.kreditkort.com',
-                    imageColor: '/images/mobile-kreditkort.png',
-                    imageBlack: '/images/mobile-kreditkort-bw.png',
-                    imageDesktop: '/images/mobile-bg-bw.png',
-                    github: '',
-                    techStack: 'HTML, CSS, NuxtJS, VueJS, Prismic',
-                    desc: ''
-                },
-                {
-                    name: 'Compinero',
-                    url: 'https://www.compinero.com',
-                    imageColor: '/images/mobile-compinero.png',
-                    imageBlack: '/images/mobile-compinero-bw.png',
-                    imageDesktop: '/images/mobile-bg-bw.png',
-                    github: '',
-                    techStack: 'HTML, CSS, NuxtJS, VueJS, Prismic',
-                    desc: ''
-                },
-                {
-                    name: 'Compary',
-                    url: 'https://www.compary.com',
-                    imageColor: '/images/mobile-compary.png',
-                    imageBlack: '/images/mobile-compary-bw.png',
-                    imageDesktop: '/images/mobile-bg-bw.png',
-                    github: '',
-                    techStack: 'HTML, CSS, NuxtJS, VueJS, Prismic',
-                    desc: ''
-                },
-                {
-                    name: 'AlltOmKreditkort',
-                    url: 'https://www.https://www.alltomkreditkort.se',
-                    imageColor: '/images/mobile-aok.png',
-                    imageBlack: '/images/mobile-aok-bw.png',
-                    imageDesktop: '/images/mobile-bg-bw.png',
-                    github: '',
-                    techStack: 'HTML, CSS, NuxtJS, VueJS, Prismic',
-                    desc: ''
-                }
-            ]
+    props: {
+        data: {
+            type: Array,
+            required: false,
+            default: () => {}
         }
     },
-    mounted() {
-
-        document.addEventListener("keydown", (e) => {
-            if (e.keyCode == 27) {
-                this.openProject = false
-            }
-        });
+    data() {
+        return {
+            open: false
+        }
+    },
+    watch: {
+        open() {
+            if(this.open !== false) document.body.style.overflow = 'hidden'
+            else document.body.style.overflow = 'visible'
+        }
     }
 }
 </script>
@@ -154,65 +121,99 @@ export default {
 }
 
 .container {
+    @include flex;
     width: 100%;
+    position: relative;
 }
 
-.work {
-    width: 100%;
-    display: flex;
-    overflow-x: auto;
+.mobile.open {
 
-    @include device(mobile) {
-        @include spacing(padding, 10, right);
+    .mobile-inner {
+        animation: open 1.3s ease-in forwards;
+        z-index: 99;
+        background: #fff;
+        cursor: default;
+    }
+}
+
+@keyframes open {
+    0% {
+
+    }
+    20% {
+        transform: scale(1.2);
+    }
+    40% {
+        transform: scale(1.2);
+    }
+    40% {
+        transform: scale(1.2);
+        position: absolute;
+    }
+    60% {
+        transform: scale(1.2) rotate(90deg);
+    }
+    80% {
+
+    }
+    100% {
+        // transform: scale(1.2) rotate(90deg) translateX(-50%) translateY(-50%);
+        transform: scale(1.2) rotate(90deg);
+        // position: fixed;
+        // top: 0; left: 0;
+        // top: 50%;
+        // left: 50%;
+    }
+}
+
+.mobile {
+    position: relative;
+    @include size(160px, 320px);
+    margin: 20px;
+    min-width: 160px;
+
+    &:hover {
+
+        img.black { display: none; }
+        img.color { display: block; }
     }
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    &-inner {
+        @include border-radius(20px);
+        @include border(all, 7px, #000);
 
-    .mobile {
-        min-width: 160px;
-        width: 160px;
-        margin: 20px;
         cursor: pointer;
-        border-radius: 20px;
-        height: 320px;
-        border: 7px solid #000;
         transition: .15s ease-in-out!important;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        background-size: cover;
+        text-align: center;
+        box-sizing: border-box;
+        height: 100%;
+        border-radius: 13px;
+        position: relative;
+        overflow: hidden;
 
-        &:hover {
-            margin-top: 10px;
+        img { @include size(100%, auto); }
 
-            img.black { display: none; }
-            img.color { display: block; }
-        }
+        img.color { display: none; }
+    }
 
-        &-inner {
-            background-size: cover;
-            text-align: center;
-            box-sizing: border-box;
-            height: 100%;
-            border-radius: 13px;
-            position: relative;
-            overflow: hidden;
+    &-content { display: none; }
 
-            img {
-                width: 100%;
-                height: auto;
-            }
-
-            img.color { display: none; }
-        }
-
-        &-content { display: none; }
-
-        &:hover {
-            .mobile-content {
-                display: block;
-            }
+    &:hover {
+        .mobile-content {
+            display: block;
         }
     }
+}
+
+.overlay {
+    @include overlay(#000, .0);
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 98;
+    cursor: pointer;
 }
 
 .open-project {

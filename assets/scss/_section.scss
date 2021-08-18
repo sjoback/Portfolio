@@ -11,6 +11,7 @@
     }
 
     &-inner {
+        position: relative;
         @include flex;
         width: 1000px;
         max-width: 100%;

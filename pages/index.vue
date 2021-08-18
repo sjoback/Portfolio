@@ -9,11 +9,11 @@
             </div>
         </section>
 
-        <section class="section-work">
+        <section class="section-work" id="work">
             <div class="section-inner">
                 <h2>The work.</h2>
 
-                <Work />
+                <Work :data="work" />
             </div>
         </section>
 
@@ -21,7 +21,7 @@
             <div class="section-inner">
                 <h2>Other projects.</h2>
 
-                <Projects />
+                <!-- <Project /> -->
             </div>
         </section>
 
@@ -30,6 +30,7 @@
                 <h2>About Me.</h2>
 
                 <div class="fw flex">
+
                     <div class="flex-1">
 
                     </div>
@@ -45,11 +46,18 @@
     </div>
 </template>
 <script>
+import work from '@/mixins/work.js';
 import Work from '@/components/Work.vue'
-import Projects from '@/components/Projects.vue'
+import Project from '@/components/Project.vue'
 import AnimatedText from '@/components/Svg.vue'
 export default {
-    components: { Work, Projects, AnimatedText }
+    components: { Work, Project, AnimatedText },
+    mixins: [ work ],
+    computed: {
+        workData() {
+            return this.work;
+        }
+    }
 }
 </script>
 <style lang="scss">
