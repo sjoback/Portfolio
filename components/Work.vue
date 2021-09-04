@@ -14,14 +14,14 @@
         >
             <div class="mobile-inner">
                 <img
-                    :src="data.imageColor"
-                    :alt="data.name"
+                    :src="work.imageColor"
+                    :alt="work.name"
                     class="color"
                 />
 
                 <img
-                    :src="data.imageBlack"
-                    :alt="data.name"
+                    :src="work.imageBlack"
+                    :alt="work.name"
                     class="black"
                 />
             </div>
@@ -33,51 +33,6 @@
             @click="open = false"
         />
     </div>
-
-
-        <!-- <transition name="fade">
-            <div
-                v-if="openProject"
-                class="open-project"
-            >
-                <transition
-                    name="pop"
-                    appear
-                >
-                    <div class="content">
-                        <a
-                            :href="openProject.url"
-                            target="_blank"
-                        >
-                            <img
-                                :src="openProject.imageDesktop"
-                                :alt="openProject.name"
-                                class="desktop"
-                            />
-                        </a>
-
-                        <div>
-                            <div v-html="openProject.name" />
-                            <div class="stack">
-                                <div
-                                    v-for="( tech, index ) in openProject.techStack"
-                                    :key="index"
-                                    class="container"
-                                >
-                                    {{ tech }}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </transition>
-
-                <div
-                    class="overlay"
-                    @click="openProject = false"
-                />
-            </div>
-        </transition>
-    </div> -->
 </template>
 
 <script>
@@ -129,7 +84,7 @@ export default {
 .mobile.open {
 
     .mobile-inner {
-        animation: open 1.3s ease-in forwards;
+        animation: open .5s ease-in forwards;
         z-index: 99;
         background: #fff;
         cursor: default;
@@ -140,71 +95,57 @@ export default {
     0% {
 
     }
-    20% {
-        transform: scale(1.2);
-    }
-    40% {
-        transform: scale(1.2);
-    }
-    40% {
-        transform: scale(1.2);
-        position: absolute;
-    }
-    60% {
-        transform: scale(1.2) rotate(90deg);
-    }
-    80% {
-
+    50% {
+        transform: scale(1.3);
     }
     100% {
-        // transform: scale(1.2) rotate(90deg) translateX(-50%) translateY(-50%);
-        transform: scale(1.2) rotate(90deg);
-        // position: fixed;
-        // top: 0; left: 0;
-        // top: 50%;
-        // left: 50%;
+        transform: scale(0);
     }
 }
 
 .mobile {
     position: relative;
-    @include size(160px, 320px);
+    @include size(160px, 310px);
     margin: 20px;
     min-width: 160px;
+    box-shadow: $bxs;
+    border-radius: 20px;
+    transition: .15s ease-in-out!important;
 
     &:hover {
-
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 30px 0px;
         img.black { display: none; }
         img.color { display: block; }
     }
 
     &-inner {
         @include border-radius(20px);
-        @include border(all, 7px, #000);
-
+        padding: 15px;
+        background: #fff;
         cursor: pointer;
-        transition: .15s ease-in-out!important;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         background-size: cover;
         text-align: center;
         box-sizing: border-box;
         height: 100%;
-        border-radius: 13px;
         position: relative;
         overflow: hidden;
 
-        img { @include size(100%, auto); }
+        img {
+            @include size(100%, auto);
+            border-radius: 10px;
+            transition: .15s ease-in-out!important;
+        }
 
         img.color { display: none; }
     }
 
     &-content { display: none; }
 
-    &:hover {
-        .mobile-content {
-            display: block;
-        }
-    }
+    // &:hover {
+    //     .mobile-content {
+    //         display: block;
+    //     }
+    // }
 }
 
 .overlay {

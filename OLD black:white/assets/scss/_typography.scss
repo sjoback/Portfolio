@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+h1, h2, h3, h4, h5 {
+    font-family: $fontFamily;
+    font-weight: bold;
+}
+
+a {
+}
+
+p {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 58px;
+
+    @include device(pad) {
+        @include font-size(122px);
+    }
+}
+
+h2 {
+    font-size: 42px;
+    line-height: 48px;
+
+    @include device(pad) {
+        font-size: 62px;
+        line-height: 68px;
+    }
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 38px;
+
+    @include device(pad) {
+        font-size: 52px;
+        line-height: 58px;
+    }
+}
+h4 {
+    @include device(pad) {
+        font-size: 24px;
+    }
+}
+h5 {
+    @include device(pad) {
+        font-size: 20px;
+    }
+}

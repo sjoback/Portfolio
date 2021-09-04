@@ -4,7 +4,7 @@
             href="#"
             target="_blank"
             v-stagger="{ threshold: .5 }"
-            v-for="( project, index ) in projects"
+            v-for="( project, index ) in data"
             :key="index"
             @click="openProject = index"
             @mouseenter="openProject = index"

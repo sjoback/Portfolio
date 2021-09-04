@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     padding: 40px 20px;
     width: 100%;
+    box-sizing: border-box;
 
     @include device(pad) {
         padding: 100px 20px;
@@ -25,12 +26,26 @@
 }
 
 section.banner {
-    min-height: 70vh;
 
-    @include device(pad) {
-        min-height: none;
-        height: 100vh;
+    .section-inner {
+        // max-width: 600px;
+
+        h1,
+        span {
+            text-align: center;
+            width: 100%;
+            display: block;
+        }
+
+        span {
+            font-size: 42px;
+            line-height: 72px;
+            font-family: $fontSpan;
+            font-weight: bold;
+        }
     }
+}
 
-    .section-inner { justify-content: flex-start; }
+section.work {
+
 }
