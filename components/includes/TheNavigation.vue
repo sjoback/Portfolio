@@ -95,7 +95,7 @@
     // transition: .15s ease-in-out;
 
     &-logo {
-        font-family: $fontSpan;
+
         font-weight: 800;
         font-size: 52px;
         margin: 30px 30px 30px 50px;
@@ -150,7 +150,6 @@
         a {
             writing-mode: vertical-lr;
             @include font-size(14px, 0);
-            font-family: $fontSpan;
             font-weight: bold;
             opacity: 0;
             color: $font;
