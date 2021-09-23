@@ -13,9 +13,9 @@
 
     &-inner {
         position: relative;
-        @include flex;
         width: 1000px;
         max-width: 100%;
+        @include flex;
 
         h2 {
             width: 100%;
