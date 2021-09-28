@@ -1,7 +1,7 @@
 export default {
     target: 'static',
     head: {
-        title: 'Joakim Sjöbäck',
+        title: 'Joakim Sjöbäck | Designer, Front-end developer & binge watcher',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },

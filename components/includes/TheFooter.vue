@@ -1,22 +1,51 @@
 <template>
-    <div class="section bg bg--main">
-        <div class="section__inner flex width width--m">
-            <div class="col fw">
-
-            </div>
-            <p class="white fw text--c">© 2020 Joakim Wall Sjöbäck. All rights reserved.</p>
+    <footer>
+        <div class="footer-inner">
+            <h2>A Journey of a Thousand Miles Begins with a Single Step</h2>
+            <span>Or you know.. buying a plane ticket</span>
         </div>
-    </div>
+    </footer>
 </template>
-<script>
-    export default {
-      components: {
 
-      }
-    }
+<script>
+export default {
+    computed: {
+        socials() {
+            return [
+                {
+                    name: 'github',
+                    url: '',
+                    icon: 'fab fa-github-alt'
+                },
+                {
+                    name: 'instagram',
+                    url: '',
+                    icon: 'fab fa-instagram'
+                },
+                {
+                    name: 'linkedin',
+                    url: '',
+                    icon: 'fab fa-linkedin-in'
+                }
+            ]
+        }
+    },
+}
 </script>
+
 <style lang="scss" scoped>
-    .section {
-        padding: 40px 0!important;
+footer {
+    @include flex;
+    background: $purple;
+    padding: 80px 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    .footer-inner {
+        width: 1000px;
+        @include flex;
+        max-width: 100%;
+        color: $white;
     }
+}
 </style>
