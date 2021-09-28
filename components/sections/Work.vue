@@ -85,6 +85,48 @@
                         </div>
                     </div>
                 </div>
+
+                <div
+                    v-addClass="{threshold: .5, class: 'animate'}"
+                    class="grid-inner"
+                >
+                    <div class="container">
+                        <img src="~/assets/images/work-aok.png" alt=""/>
+                    </div>
+                    <div class="container">
+                        <div>
+                            <div class="container-head">
+                                <h2>AlltOmKreditkort.se</h2>
+                                <span>2021</span>
+                            </div>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                            <a href="https://alltomkreditkort.se" target="_blank">Visit site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    v-addClass="{threshold: .5, class: 'animate'}"
+                    class="grid-inner"
+                >
+                    <div class="container">
+                        <img src="~/assets/images/work-lånen.png" alt=""/>
+                    </div>
+                    <div class="container">
+                        <div>
+                            <div class="container-head">
+                                <h2>Lånen.se</h2>
+                                <span>2021</span>
+                            </div>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                            <a href="https://lånen.se" target="_blank">Visit site</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
