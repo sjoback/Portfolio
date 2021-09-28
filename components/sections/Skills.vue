@@ -2,42 +2,56 @@
     <section>
         <div class="section-inner">
             <div class="container">
-                <img src="~/assets/images/designer.png" alt="Designer">
-                <h2>Designer</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                <div class="container-inner">
+                    <img src="~/assets/images/designer.png" alt="Designer">
+                    <h2>Designer</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
 
-                <h5>Things I enjoy designing:</h5>
-                <p>Simplistic design, Beautiful color schemas, sdfsa</p>
-                <h5>Tools I use/prefer:</h5>
-                <ul>
-                    <li>Adobe Photoshop</li>
-                    <li>Adobe Illustrator</li>
-                    <li>Sketch</li>
-                    <li>Invision</li>
-                    <li>Paper sketch</li>
-                </ul>
+                    <h5>Things I enjoy designing:</h5>
+                    <p>Simplistic design, Beautiful colors, Clean patterns</p>
+                    <h5>Tools I use:</h5>
+                    <ul>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Invision</li>
+                        <li>Paper sketch</li>
+                    </ul>
+                </div>
             </div>
+
             <div class="container">
-                <img src="~/assets/images/developer.png" alt="Front-end Developer">
-                <h2>Front-end Developer</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <h5>Things I enjoy designing:</h5>
-                <p>Something, test, sadfasdf, sdfsa</p>
-                <h5>Tools I use/prefer:</h5>
-                <ul>
-                    <li>Thing</li>
-                </ul>
+                <div class="container-inner">
+                    <img src="~/assets/images/developer.png" alt="Front-end Developer">
+                    <h2>Front-end Developer</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <h5>Things I enjoy designing:</h5>
+                    <p>Born and bread Vue-head. Other frameworks are sweet, Vue is sweeter.</p>
+                    <h5>How I do it:</h5>
+                    <ul>
+                        <li>Vue</li>
+                        <li>React</li>
+                        <li>Wordpress</li>
+                        <li>Laravel</li>
+                    </ul>
+                </div>
             </div>
+
             <div class="container">
-                <img src="~/assets/images/bingewatcher.png" alt="Bing watcher">
-                <h2>Bing watcher</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <h5>Things I enjoy designing:</h5>
-                <p>Something, test, sadfasdf, sdfsa</p>
-                <h5>Tools I use/prefer:</h5>
-                <ul>
-                    <li>Thing</li>
-                </ul>
+                <div class="container-inner">
+                    <img src="~/assets/images/bingewatcher.png" alt="Bing watcher">
+                    <h2>Binge watcher</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <h5>Things I enjoy binging on:</h5>
+                    <p>Comedy, Drama, Sci Fi, Documentaries</p>
+                    <h5>A few series I recommend:</h5>
+                    <ul>
+                        <li>The Office(US)</li>
+                        <li>How I met your mother</li>
+                        <li>Succession</li>
+                        <li>The Leftovers</li>
+                        <!-- <li>True Detective S1</li> -->
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -61,30 +75,57 @@ section {
 
     .section-inner {
         margin-top: -80px;
-        display: flex;
-        align-items: stretch;
-        justify-content: center;
+        @include flex(center,stretch);
         box-shadow: $bxs;
         @include border-radius(20px);
         margin-top: -200px;
         position: relative;
         z-index: 3;
 
-
         .container {
             @include flex(center,start);
-            flex: 1;
-            padding: 40px;
+            height: 100%;
+            width: 100%;
+            @include spacing(padding,8);
             background: $white;
 
-            &:first-child {
-                @include border-radius(20px,(bottom-left, top-left));
-            }
-            &:last-child {
-                @include border-radius(20px,(bottom-right, top-right));
+            @media screen and (min-width: 700px) {
+                flex: 1;
+                width: auto;
             }
 
-            &:nth-child(2) {  @include border((left, right)); }
+            &-inner {
+                @include flex(center,start);
+            }
+
+            &:first-child {
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+
+                @media screen and (min-width: 700px) {
+                    border-bottom-left-radius: 20px;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 0;
+                }
+            }
+            &:last-child {
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+
+                @media screen and (min-width: 700px) {
+                    border-top-right-radius: 20px;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 20px;
+                }
+            }
+
+            &:nth-child(2) {
+                @include border((top, bottom));
+
+                @include device(pad) {
+                    @include border((left, right));
+                }
+            }
 
             img {
                 @include size(60px);

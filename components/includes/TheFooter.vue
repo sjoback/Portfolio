@@ -2,8 +2,9 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-inner__outro">
-                <h2>A Journey of a Thousand Miles Begins with a Single Step</h2>
-                <span>Or you know.. buying a plane ticket</span>
+                <img src="/favicon.ico" alt="Joakim Sjöbäck">
+                <h2><span>"</span>Good artists copy, great artists steal<span>"</span></h2>
+                <!-- <span>Or you know.. buying a plane ticket</span> -->
             </div>
 
             <ul class="footer-inner__socials">
@@ -19,6 +20,8 @@
                     </a>
                 </li>
             </ul>
+
+            <div class="footer-inner__copy">Handcrafted by Me Ⓒ 2021</div>
         </div>
     </footer>
 </template>
@@ -67,11 +70,31 @@ footer {
             @include grid(1, 20px);
             width: 100%;
             text-align: center;
+
+            img {
+                @include size(60px);
+                margin: auto;
+            }
+
+            h2 {
+                font-size: 32px;
+                font-weight: 200;
+                @include spacing(margin,6,top);
+                opacity: .7;
+
+                span {
+                    font-weight: bold;
+                    margin: 0 8px;
+                    font-style: italic;
+                    display: inline-block;
+                    font-family: 'Sofadi One', cursive;
+                }
+            }
         }
 
         &__socials {
             @include grid(3, 30px);
-            @include spacing(margin,8,top);
+            @include spacing(margin,10,(top,bottom));
 
             li {
                 @include size(60px);
@@ -88,6 +111,15 @@ footer {
                     font-size: 22px;
                 }
             }
+        }
+
+        &__copy {
+            font-family: $fp;
+            font-weight: 100;
+            opacity: .8;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
         }
     }
 }

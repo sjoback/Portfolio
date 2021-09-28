@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="section-inner">
-            <div class="grid">
+            <div class="section-inner__grid">
                 <div
                     v-addClass="{threshold: .5, class: 'animate'}"
                     class="grid-inner"
@@ -132,62 +132,122 @@
     </section>
 </template>
 
+<script>
+export default {
+    data() {
+        return {
+            tab: 2
+        }
+    }
+}
+</script>
+
 <style lang="scss" scoped>
 section {
-    .grid {
-        @include grid(1, 160px);
+    .section-inner {
+        &__grid {
+            @include grid(1, 100px);
+            @include device(pad) {
+                @include grid(1, 160px);
+            }
 
-        &-inner.animate {
-            opacity: 1;
-            animation: animate .3s ease-in forwards;
-        }
-        &-inner {
-            opacity: 0;
-            @include grid(2, 40px);
+            &:first-child { margin-bottom: 100px; }
 
-            .container {
-                img { @include size(500px, auto); }
+            .grid-inner.animate {
+                opacity: 1;
+                animation: animate .3s ease-in forwards;
+            }
+            .grid-inner {
+                opacity: 0;
+                @include grid(1, 40px);
 
-                &:last-child {
-                    @include flex;
+                @include device(pad) {
+                    @include grid(2, 20px);
+                }
 
-                    div { @include flex(start); }
+                @include device(desktop) {
+                    @include grid(2, 40px);
+                }
 
-                    .container-head {
-                        @include flex(start);
-
-                        h2 {
-                            text-align: left;
-                            width: auto;
-                            margin: 0;
+                .container {
+                    img {
+                        @include size(250px, auto);
+                        @include device(pad) {
+                            @include size(300px, auto);
                         }
 
-                        span {
+                        @include device(desktop) {
+                            @include size(500px, auto);
+                        }
+                    }
+
+                    &:first-child {
+                        @include flex;
+                    }
+
+                    &:last-child {
+                        @include flex;
+
+                        div {
+                            @include flex;
+                            @include device(pad) {
+                                @include flex(start);
+                            }
+                        }
+
+                        .container-head {
+                            @include flex(start);
+                            position: relative;
+
+                            h2 {
+                                text-align: left;
+                                width: auto;
+                                margin: 0;
+
+                                @include device(mobile) {
+                                    margin-top: 40px;
+                                }
+                            }
+
+                            span {
+                                background: $purple;
+                                padding: 5px;
+                                border-radius: 3px;
+                                color: $white;
+                                font-size: 12px;
+                                margin-left: 20px;
+                                font-family: $fp;
+                                font-weight: bold;
+
+                                @include device(mobile) {
+                                    position: absolute;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    margin-left: 0;
+                                    top: -10px;
+                                }
+                            }
+                        }
+
+                        p {
+                            @include spacing(margin,6,(bottom,top));
+                            text-align: center;
+                            @include device(pad) {
+                                text-align: left;
+                            }
+                        }
+
+                        a {
                             background: $purple;
-                            padding: 5px;
-                            border-radius: 3px;
-                            color: $white;
-                            font-size: 12px;
-                            margin-left: 20px;
+                            padding: 15px 30px;
                             font-family: $fp;
-                            font-weight: bold;
+                            letter-spacing: .5px;
+                            color: $white;
+                            border-radius: 50px;
+                            transition: .15s ease-in-out;
+
+                            &:hover { background: $darkpurple; }
                         }
-                    }
-
-                    p {
-                        @include spacing(margin,6,(bottom,top));
-                    }
-
-                    a {
-                        background: $purple;
-                        padding: 15px 30px;
-                        font-family: $fp;
-                        letter-spacing: .5px;
-                        color: $white;
-                        border-radius: 50px;
-                        transition: .15s ease-in-out;
-
-                        &:hover { background: $darkpurple; }
                     }
                 }
             }
