@@ -1,8 +1,6 @@
 export default {
     target: 'static',
-    router: {
-        base: '/portfolio/'
-    },
+    router: { base: '/portfolio/' },
     head: {
         title: 'Joakim Sjöbäck | Designer, Front-end developer & binge watcher',
         meta: [
@@ -33,8 +31,7 @@ export default {
     ],
 
     plugins: [
-        '@/plugins/directive',
-        '@/node_modules/@swegaming-ab/vue-directive'
+        '@/plugins/directive.js'
     ],
 
     buildModules: [
@@ -49,8 +46,7 @@ export default {
         scss: [
             '@/assets/scss/vars/_vars.scss',
             '@/assets/scss/vars/_colors.scss',
-            '@/assets/scss/vars/_mixins.scss',
-            '@/node_modules/@swegaming-ab/base-css/src/mixins/main.scss'
+            '@/assets/scss/vars/_mixins.scss'
         ]
     },
 
