@@ -29,8 +29,6 @@ export default {
         }
     },
 
-    ...routerBase,
-
     loading: { color: '#fff' },
 
     css: [

@@ -3,7 +3,8 @@
         class="nav"
         :class="{ scrolled: scrolled }"
     >
-        <img src="/favicon.ico" alt="" class="nav-logo">
+        <img src="~/static/favicon.ico" alt="" class="nav-logo">
+        <!-- <img :src="require('@/static/favicon.ico')" alt="" class="nav-logo"> -->
 
         <ul class="nav-list">
             <li>
