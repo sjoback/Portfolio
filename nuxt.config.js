@@ -30,7 +30,6 @@ export default {
     ],
 
     plugins: [
-        '@/node_modules/@swegaming-ab/vue-directive',
         '@/plugins/directive.js'
     ],
 
