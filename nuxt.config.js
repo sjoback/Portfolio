@@ -1,5 +1,6 @@
 export default {
     target: 'static',
+    router: { base: '/portfolio/' },
     head: {
         title: 'Joakim Sjöbäck | Designer, Front-end developer & binge watcher',
         meta: [
