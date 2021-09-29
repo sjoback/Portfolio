@@ -1,3 +1,76 @@
+/* BORDER
+
+    $sides: border side
+    $width: border width
+    $color: border color
+*/
+@mixin border( $sides: ( all ), $width: 1px, $color: map-get($border, 'color') ) {
+    border: 0;
+    box-sizing: border-box;
+
+    @each $side in $sides {
+        @if $side == all {
+            border: $width solid $color;
+        }
+        @else if $side == 0 {
+            border: 0;
+        }
+        @else {
+            border-#{$side}: $width solid $color;
+        }
+    }
+}
+
+/* BORDER-RADIUS
+
+    $radius: radius amount
+    $side: radius side
+*/
+@mixin border-radius( $radius, $sides: ( all ) ) {
+    @each $side in $sides {
+        @if $side == all {
+            border-radius: $radius;
+        }
+        @else {
+            border-#{$side}-radius: $radius;
+        }
+    }
+}
+
+/* MEDIA QUERY
+    $device: [ 'mobile', 'pad', 'tablet', 'pixelsAmount', 'desktop' ]
+*/
+@mixin device($device) {
+    @if $device == mobile {
+        @media screen and (max-width: map-get($breakpoints, tablet)) { @content; }
+    }
+
+    @if $device == pad {
+        @media screen and (min-width: map-get($breakpoints, tablet)) { @content; }
+    }
+
+    @if $device == padOnly {
+        @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) { @content; }
+    }
+
+    @if $device == desktop {
+        @media screen and (min-width: map-get($breakpoints, desktop)) { @content; }
+    }
+
+    @else {
+        @media screen and (min-width: $device) { @content; }
+    }
+}
+
+/* ELEMENT SIZE
+    $width
+    $height
+*/
+@mixin size( $width, $height: $width ) {
+    width: $width;
+    height: $height;
+}
+
 /* FLEX
 
     $xAxis: horizontal flex direction
@@ -19,26 +92,10 @@
     @else { align-items: center; }
 }
 
-
-/* BORDER
-
-    $sides: border side
-    $width: border width
-    $color: border color
-*/
-@mixin border( $sides: ( all ), $width: 1px, $color: map-get($border, color) ) {
-    border: 0;
-
-    @each $side in $sides {
-        @if $side == all {
-            border: $width solid $color;
-        }
-        @else {
-            border-#{$side}: $width solid $color;
-        }
-    }
+/* FONT FAMILY */
+@mixin font-family($el) {
+    font-family: map-get($fontFamily, $el);
 }
-
 
 /* FONT SIZE & LINE-HEIGHT
 
@@ -50,76 +107,52 @@
     line-height: $lineHeight;
 }
 
+/* GRID
 
-/* BORDER-RADIUS
-
-    $radius: radius amount
-    $side: radius side
+    $count: amount of aligned items
+    $gap: space between items
 */
-@mixin border-radius( $radius, $sides: ( all ) ) {
-    @each $side in $sides {
-        @if $side == all {
-            border-radius: $radius;
-        }
-        @else {
-            border-#{$side}-radius: $radius;
-        }
-    }
+@mixin grid( $count, $gap ) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat( $count, 1fr );
 }
 
-/* MEDIA QUERY
-    $device: accepts 'mobile', 'pad', 'padOnly' or 'desktop'
-*/
-@mixin device($device) {
-    @if $device == mobile {
-        @media screen and (max-width: map-get($breakpoints, tablet)) { @content; }
-    }
-
-    @if $device == pad {
-        @media screen and (min-width: map-get($breakpoints, tablet)) { @content; }
-    }
-
-    @if $device == padOnly {
-        @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) { @content; }
-    }
-
-    @if $device == desktop {
-        @media screen and (min-width: map-get($breakpoints, desktop)) { @content; }
-    }
-}
-
-/* ELEMENT SIZE
-    $width
-    $height
-*/
-@mixin size( $width, $height: $width ) {
-    width: $width;
-    height: $height;
-}
-
-/* OVERLAY
-    $background
-    $z-index
-    $opacity
-*/
-@mixin overlay( $background, $opacity, $zIndex: 0 ) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: $background;
-    z-index: $zIndex;
-    opacity: $opacity;
-}
-
-
-/* PSUEDO ELEMENT
+/* PSUEDO
     $content
 */
 @mixin psuedo( $kind: after, $content: '' ) {
     &:#{$kind} {
         content: $content;
         @content;
+    }
+}
+
+@mixin spacing( $decider, $multiplier, $sides: ( all ) ) {
+    box-sizing: border-box;
+
+    @each $side in $sides {
+        @if $side == all {
+            @media screen and (max-width: map-get($breakpoints, tablet)) {
+                #{$decider}: map-get($spacing, mobile) * $multiplier;
+            }
+            @media screen and (min-width: map-get($breakpoints, tablet)) {
+                #{$decider}: map-get($spacing, tablet) * $multiplier;
+            }
+            @media screen and (min-width: map-get($breakpoints, desktop)) {
+                #{$decider}: map-get($spacing, desktop) * $multiplier;
+            }
+        }
+        @else {
+            @media screen and (max-width: map-get($breakpoints, tablet)) {
+                #{$decider}-#{$side}: map-get($spacing, mobile) * $multiplier;
+            }
+            @media screen and (min-width: map-get($breakpoints, tablet)) {
+                #{$decider}-#{$side}: map-get($spacing, tablet) * $multiplier;
+            }
+            @media screen and (min-width: map-get($breakpoints, tablet)) {
+                #{$decider}-#{$side}: map-get($spacing, desktop) * $multiplier;
+            }
+        }
     }
 }
