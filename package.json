@@ -8,6 +8,8 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages",
     "dev": "nuxt",
     "build": "nuxt build",
+    "build: gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate: gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
