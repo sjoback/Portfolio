@@ -1,6 +1,11 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+    router: {
+        base: '/portfolio/'
+    }
+} : {}
 export default {
     target: 'static',
-    router: { base: '/portfolio/' },
+    // router: { base: '/portfolio/' },
     head: {
         title: 'Joakim Sjöbäck | Designer, Front-end developer & binge watcher',
         meta: [
@@ -23,6 +28,8 @@ export default {
             // Do something
         }
     },
+
+    ...routerBase,
 
     loading: { color: '#fff' },
 
