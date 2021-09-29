@@ -15,6 +15,7 @@
                     <a
                         :href="social.url"
                         :alt="social.name"
+                        target="_blank"
                     >
                         <i :class="social.icon"></i>
                     </a>
@@ -43,7 +44,7 @@ export default {
                 },
                 {
                     name: 'linkedin',
-                    url: '',
+                    url: 'https://www.linkedin.com/in/joakim-sj%C3%B6b%C3%A4ck-8089a0110/',
                     icon: 'fab fa-linkedin-in'
                 }
             ]

@@ -1,6 +1,8 @@
 <template>
     <section>
         <div class="section-inner">
+            <h2 class="section-inner__header">PRODUCTS</h2>
+
             <div class="section-inner__grid">
                 <div
                     v-addClass="{threshold: .5, class: 'animate'}"
@@ -145,6 +147,13 @@ export default {
 <style lang="scss" scoped>
 section {
     .section-inner {
+        &__header {
+            color: #999;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+            font-size: 20px;
+        }
+
         &__grid {
             @include grid(1, 100px);
             @include device(pad) {

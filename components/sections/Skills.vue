@@ -1,6 +1,7 @@
 <template>
     <section>
         <div class="section-inner">
+
             <div class="container">
                 <div class="container-inner">
                     <img src="~/assets/images/designer.png" alt="Designer">
@@ -81,6 +82,13 @@ section {
         margin-top: -200px;
         position: relative;
         z-index: 3;
+
+        &__header {
+            color: #999;
+            letter-spacing: 2px;
+            margin-bottom: 60px;
+            font-size: 20px;
+        }
 
         .container {
             @include flex(center,start);
