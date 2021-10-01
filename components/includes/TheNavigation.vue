@@ -1,8 +1,5 @@
 <template>
-    <div
-        class="nav"
-        :class="{ scrolled: scrolled }"
-    >
+    <div class="nav">
         <img src="/favicon.ico" alt="" class="nav-logo">
         <!-- <img :src="require('@/static/favicon.ico')" alt="" class="nav-logo"> -->
 

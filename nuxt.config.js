@@ -1,11 +1,5 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-    router: {
-        base: '/portfolio/'
-    }
-} : {}
 export default {
     target: 'static',
-    // router: { base: '/portfolio/' },
     head: {
         title: 'Joakim Sjöbäck | Designer, Front-end developer & binge watcher',
         meta: [
@@ -32,11 +26,11 @@ export default {
     loading: { color: '#fff' },
 
     css: [
-        'assets/scss/main.scss'
+        'assets/css/main.scss'
     ],
 
     plugins: [
-        '@/plugins/directive.js'
+        '@/node_modules/@leetajz/vue-directive'
     ],
 
     buildModules: [
@@ -49,9 +43,10 @@ export default {
     ],
     styleResources: {
         scss: [
-            '@/assets/scss/vars/_vars.scss',
-            '@/assets/scss/vars/_colors.scss',
-            '@/assets/scss/vars/_mixins.scss'
+            '@/assets/css/vars/_vars.scss',
+            '@/assets/css/vars/_colors.scss',
+            '@/assets/css/vars/_mixins.scss'
+            // '@/node_modules/@swegaming-ab/base-css/src/mixins/main.scss'
         ]
     },
 

@@ -1,7 +1,6 @@
 <template>
     <section>
         <div class="section-inner">
-
             <div class="container">
                 <div class="container-inner">
                     <img src="~/assets/images/designer.png" alt="Designer">
@@ -60,6 +59,7 @@
 
 <style lang="scss" scoped>
 section {
+    padding: 40px 20px;
     position: relative;
 
     &:after {
@@ -74,12 +74,21 @@ section {
         z-index: 2;
     }
 
+    // &:before {
+    //     position: absolute;
+    //     content: "";
+    //     width: 100%;
+    //     height: 34px;
+    //     bottom: -34px;
+    //     transform: scaleY(-1);
+    //     left: 0;
+    //     background: url('~assets/images/bg-slim.png');
+    //     background-size: 100% 100%;
+    //     z-index: 2;
+    // }
+
     .section-inner {
-        margin-top: -80px;
         @include flex(center,stretch);
-        box-shadow: $bxs;
-        @include border-radius(20px);
-        margin-top: -200px;
         position: relative;
         z-index: 3;
 
@@ -104,27 +113,6 @@ section {
 
             &-inner {
                 @include flex(center,start);
-            }
-
-            &:first-child {
-                border-top-right-radius: 20px;
-                border-top-left-radius: 20px;
-
-                @media screen and (min-width: 700px) {
-                    border-bottom-left-radius: 20px;
-                    border-top-left-radius: 20px;
-                    border-top-right-radius: 0;
-                }
-            }
-            &:last-child {
-                border-bottom-left-radius: 20px;
-                border-bottom-right-radius: 20px;
-
-                @media screen and (min-width: 700px) {
-                    border-top-right-radius: 20px;
-                    border-bottom-left-radius: 0;
-                    border-bottom-right-radius: 20px;
-                }
             }
 
             &:nth-child(2) {

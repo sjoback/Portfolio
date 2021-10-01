@@ -9,8 +9,8 @@
 
             <ul class="footer-inner__socials">
                 <li
-                    v-for="social in socials"
-                    :key="social"
+                    v-for="(social, index) in socials"
+                    :key="index"
                 >
                     <a
                         :href="social.url"

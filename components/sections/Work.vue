@@ -5,109 +5,28 @@
 
             <div class="section-inner__grid">
                 <div
+                    v-for="(product,index) in products"
                     v-addClass="{threshold: .5, class: 'animate'}"
                     class="grid-inner"
                 >
                     <div class="container">
-                        <img src="~/assets/images/work-kreditkort.png" alt=""/>
+                        <img :src="product.img" alt=""/>
                     </div>
                     <div class="container">
                         <div>
                             <div class="container-head">
-                                <h2>Kreditkort.com</h2>
-                                <span>2019</span>
+                                <h2>{{product.name}}</h2>
+                                <span>{{product.launched}}</span>
                             </div>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>{{product.desc}}</p>
 
-                            <a href="https://kreditkort.com" target="_blank">Visit site</a>
+                            <a :href="product.url" target="_blank">Visit site</a>
                         </div>
                     </div>
                 </div>
 
-                <div
-                    v-addClass="{threshold: .5, class: 'animate'}"
-                    class="grid-inner"
-                >
-                    <div class="container">
-                        <img src="~/assets/images/work-bettingguide.png" alt=""/>
-                    </div>
-                    <div class="container">
-                        <div>
-                            <div class="container-head">
-                                <h2>Bettingguide.com</h2>
-                                <span>2020</span>
-                            </div>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                            <a href="https://bettingguide.com" target="_blank">Visit site</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    v-addClass="{threshold: .5, class: 'animate'}"
-                    class="grid-inner"
-                >
-                    <div class="container">
-                        <img src="~/assets/images/work-compary.png" alt=""/>
-                    </div>
-                    <div class="container">
-                        <div>
-                            <div class="container-head">
-                                <h2>Compary.com</h2>
-                                <span>2020</span>
-                            </div>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                            <a href="https://compary.com" target="_blank">Visit site</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    v-addClass="{threshold: .5, class: 'animate'}"
-                    class="grid-inner"
-                >
-                    <div class="container">
-                        <img src="~/assets/images/work-compinero.png" alt=""/>
-                    </div>
-                    <div class="container">
-                        <div>
-                            <div class="container-head">
-                                <h2>Compinero.com</h2>
-                                <span>2020</span>
-                            </div>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                            <a href="https://compinero.com" target="_blank">Visit site</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    v-addClass="{threshold: .5, class: 'animate'}"
-                    class="grid-inner"
-                >
-                    <div class="container">
-                        <img src="~/assets/images/work-aok.png" alt=""/>
-                    </div>
-                    <div class="container">
-                        <div>
-                            <div class="container-head">
-                                <h2>AlltOmKreditkort.se</h2>
-                                <span>2021</span>
-                            </div>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                            <a href="https://alltomkreditkort.se" target="_blank">Visit site</a>
-                        </div>
-                    </div>
-                </div>
+                <!--
 
                 <div
                     v-addClass="{threshold: .5, class: 'animate'}"
@@ -128,7 +47,7 @@
                             <a href="https://lånen.se" target="_blank">Visit site</a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -139,6 +58,54 @@ export default {
     data() {
         return {
             tab: 2
+        }
+    },
+    computed: {
+        products() {
+            return [
+                {
+                    img: require('~/assets/images/work-kreditkort.png'),
+                    name: 'Kreditkort.com',
+                    launched: '2019',
+                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    url: 'https://kreditkort.com'
+                },
+                {
+                    img: require('~/assets/images/work-bettingguide.png'),
+                    name: 'BettingGuide.com',
+                    launched: '2020',
+                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    url: 'https://bettingguide.com'
+                },
+                {
+                    img: require('~/assets/images/work-compary.png'),
+                    name: 'Compary.com',
+                    launched: '2020',
+                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    url: 'https://compary.com'
+                },
+                {
+                    img: require('~/assets/images/work-compinero.png'),
+                    name: 'Compinero.com',
+                    launched: '2020',
+                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    url: 'https://compinero.com'
+                },
+                {
+                    img: require('~/assets/images/work-aok.png'),
+                    name: 'AlltOmKreditkort.se',
+                    launched: '2021',
+                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    url: 'https://alltomkreditkort.se'
+                },
+                {
+                    img: require('~/assets/images/work-lånen.png'),
+                    name: 'Lånen.se',
+                    launched: '2021',
+                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    url: 'https://lånen.se'
+                }
+            ]
         }
     }
 }

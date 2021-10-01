@@ -66,23 +66,21 @@ section {
             width: 100%;
 
             ul {
+                @include grid(3, 60px);
+
                 li {
                     width: 100%;
-                    @include flex;
-                    padding: 10px 0;
-                    @include border(bottom);
-                    &:last-child { border: 0; }
+                    @include grid(1,10px);
+                    text-align: center;
 
                     i {
                         color: $purple;
                         font-size: 46px;
-                        margin: 0 20px;
                         &:hover { color: $darkpurple; }
                     }
 
                     span {
-                        flex: 1;
-                        margin: 0 20px;
+                        width: 100%;
                         color: $font;
                         font-weight: bold;
                         @include font-size(20px);

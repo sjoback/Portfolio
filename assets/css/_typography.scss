@@ -28,8 +28,7 @@ p {
 
 h1 {
     font-weight: bold;
-    font-size: 52px;
-    line-height: 58px;
+    @include font-size(42px, 14px);
 
     @include device(pad) {
         @include font-size(52px, 14px);
@@ -37,12 +36,11 @@ h1 {
 }
 
 h2 {
-    font-size: 42px;
-    line-height: 48px;
+    @include font-size(22px, 10px);
+    font-weight: bold;
 
     @include device(pad) {
-        font-weight: bold;
-        @include font-size(22px, 10px);
+
     }
 }
 
