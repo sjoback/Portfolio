@@ -84,7 +84,7 @@ section {
                         color: $font;
                         font-weight: bold;
                         @include font-size(20px);
-                        font-family: $fp;
+                        font-family: $fontText;
                     }
 
                     p {

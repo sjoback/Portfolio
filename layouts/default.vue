@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div :class="$store.state.activeColor">
       <!-- <Loader /> -->
-      <Navbar @emit="tellChatBot" />
+      <Navbar />
+
       <nuxt />
+
       <Footer />
   </div>
 </template>
@@ -11,12 +13,6 @@ import Navbar from '@/components/includes/TheNavigation.vue';
 import Footer from '@/components/includes/TheFooter.vue';
 import Loader from '@/components/Loader.vue';
 export default {
-    components: { Navbar, Footer, Loader },
-    methods: {
-        tellChatBot(value) {
-            // Open and pass value to chatbot
-            console.log(value);
-        }
-    }
+    components: { Navbar, Footer, Loader }
 }
 </script>

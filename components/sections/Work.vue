@@ -19,35 +19,12 @@
                                 <span>{{product.launched}}</span>
                             </div>
 
-                            <p>{{product.desc}}</p>
+                            <p v-html="product.desc"></p>
 
                             <a :href="product.url" target="_blank">Visit site</a>
                         </div>
                     </div>
                 </div>
-
-                <!--
-
-                <div
-                    v-addClass="{threshold: .5, class: 'animate'}"
-                    class="grid-inner"
-                >
-                    <div class="container">
-                        <img src="~/assets/images/work-lånen.png" alt=""/>
-                    </div>
-                    <div class="container">
-                        <div>
-                            <div class="container-head">
-                                <h2>Lånen.se</h2>
-                                <span>2021</span>
-                            </div>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                            <a href="https://lånen.se" target="_blank">Visit site</a>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -64,45 +41,51 @@ export default {
         products() {
             return [
                 {
-                    img: require('~/assets/images/work-kreditkort.png'),
+                    // img: require('~/images/work-kreditkort.png'),
+                    img: '/images/work-kreditkort.png',
                     name: 'Kreditkort.com',
                     launched: '2019',
-                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://kreditkort.com'
                 },
                 {
-                    img: require('~/assets/images/work-bettingguide.png'),
+                    // img: require('~/images/work-bettingguide.png'),
+                    img: '/images/work-bettingguide.png',
                     name: 'BettingGuide.com',
                     launched: '2020',
-                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://bettingguide.com'
                 },
                 {
-                    img: require('~/assets/images/work-compary.png'),
+                    // img: require('~/images/work-compary.png'),
+                    img: '/images/work-compary.png',
                     name: 'Compary.com',
                     launched: '2020',
-                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on simplicity, digital profile & page speed.',
                     url: 'https://compary.com'
                 },
                 {
-                    img: require('~/assets/images/work-compinero.png'),
+                    // img: require('~/images/work-compinero.png'),
+                    img: '/images/work-compinero.png',
                     name: 'Compinero.com',
                     launched: '2020',
-                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://compinero.com'
                 },
                 {
-                    img: require('~/assets/images/work-aok.png'),
+                    // img: require('~/images/work-aok.png'),
+                    img: '/images/work-aok.png',
                     name: 'AlltOmKreditkort.se',
                     launched: '2021',
-                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://alltomkreditkort.se'
                 },
                 {
-                    img: require('~/assets/images/work-lånen.png'),
+                    // img: require('~/images/work-lånen.png'),
+                    img: '/images/work-lånen.png',
                     name: 'Lånen.se',
                     launched: '2021',
-                    desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://lånen.se'
                 }
             ]
@@ -192,7 +175,7 @@ section {
                                 color: $white;
                                 font-size: 12px;
                                 margin-left: 20px;
-                                font-family: $fp;
+                                font-family: $fontText;
                                 font-weight: bold;
 
                                 @include device(mobile) {
@@ -208,6 +191,8 @@ section {
                         p {
                             @include spacing(margin,6,(bottom,top));
                             text-align: center;
+                            width: 100%;
+
                             @include device(pad) {
                                 text-align: left;
                             }
@@ -216,7 +201,7 @@ section {
                         a {
                             background: $purple;
                             padding: 15px 30px;
-                            font-family: $fp;
+                            font-family: $fontText;
                             letter-spacing: .5px;
                             color: $white;
                             border-radius: 50px;

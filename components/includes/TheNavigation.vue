@@ -3,6 +3,8 @@
         <img src="/favicon.ico" alt="" class="nav-logo">
         <!-- <img :src="require('@/static/favicon.ico')" alt="" class="nav-logo"> -->
 
+        <ColorChanger />
+
         <ul class="nav-list">
             <li>
                 <nuxt-link to="#">Binge watcher</nuxt-link>
@@ -17,8 +19,9 @@
 
 <script>
 import ChatBot from '@/components/ChatBot.vue';
+import ColorChanger from '@/components/ColorChanger.vue';
 export default {
-    components: { ChatBot },
+    components: { ChatBot, ColorChanger },
     methods: {
         emit() {
             // emit to layout so open chatbot with appropriate question/answer
@@ -49,8 +52,8 @@ export default {
 
         li a {
             margin-left: 40px;
-            font-family: $fp;
-            font-weight: bold;
+            font-family: $fontText;
+            // font-weight: bold;
             color: $white;
         }
     }

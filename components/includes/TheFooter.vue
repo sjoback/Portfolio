@@ -115,7 +115,7 @@ footer {
         }
 
         &__copy {
-            font-family: $fp;
+            font-family: $fontText;
             font-weight: 100;
             opacity: .8;
             width: 100%;

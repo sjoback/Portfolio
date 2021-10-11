@@ -7,15 +7,15 @@ h1 {
 }
 
 h2, h3, h4, h5 {
-    font-family: $fp;
+    font-family: $fontText;
     font-family: 'Sofadi One', cursive;
-    font-family: $fp;
+    font-family: $fontText;
     font-weight: 300;
     // font-weight: bold;
 }
 
 a {
-    font-family: $fp;
+    font-family: $fontText;
 }
 
 p {
@@ -23,7 +23,7 @@ p {
     line-height: 26px;
     // letter-spacing: .5px;
     font-weight: 200;
-    font-family: $fp;
+    font-family: $fontText;
 }
 
 h1 {
@@ -63,5 +63,5 @@ h5 {
     line-height: 26px;
     // letter-spacing: .5px;
     font-weight: 300;
-    font-family: $fp;
+    font-family: $fontText;
 }

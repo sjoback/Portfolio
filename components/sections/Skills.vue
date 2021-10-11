@@ -124,7 +124,7 @@ section {
             }
 
             img {
-                @include size(60px);
+                @include size(140px);
                 margin-bottom: 40px;
             }
 
@@ -140,7 +140,7 @@ section {
                 @include flex;
                 width: 100%;
                 @include font-size(16px, 10px);
-                font-family: $fp;
+                font-family: $fontText;
 
                 li {
                     font-weight: 200;
@@ -152,4 +152,10 @@ section {
     }
 }
 
+// Colors
+.black {
+    section::after {
+        display: none;
+    }
+}
 </style>

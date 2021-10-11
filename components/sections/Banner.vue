@@ -42,4 +42,36 @@ section.banner {
         }
     }
 }
+
+// Colors
+.black {
+    section.banner {
+        background: #000;
+        height: 100vh;
+
+        &:before,
+        &:after {
+            opacity: .05;
+        }
+    }
+}
+.white {
+    section.banner {
+        background: rgba(239, 235, 221, .3);
+        height: 100vh;
+
+        &:before,
+        &:after {
+            opacity: .5;
+        }
+
+        .section-inner {
+            color: #222;;
+
+            h5 {
+                @include font-size(20px, 10px);
+            }
+        }
+    }
+}
 </style>
