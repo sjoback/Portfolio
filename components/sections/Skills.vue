@@ -3,7 +3,7 @@
         <div class="section-inner">
             <div class="container">
                 <div class="container-inner">
-                    <img src="~/assets/images/designer.png" alt="Designer">
+                    <img src="/images/designer.png" alt="Designer">
                     <h2>Designer</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
 
@@ -21,7 +21,7 @@
 
             <div class="container">
                 <div class="container-inner">
-                    <img src="~/assets/images/developer.png" alt="Front-end Developer">
+                    <img src="/images/developer.png" alt="Front-end Developer">
                     <h2>Front-end Developer</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                     <h5>Things I enjoy designing:</h5>
@@ -38,7 +38,7 @@
 
             <div class="container">
                 <div class="container-inner">
-                    <img src="~/assets/images/bingewatcher.png" alt="Bing watcher">
+                    <img src="/images/bingewatcher.png" alt="Bing watcher">
                     <h2>Binge watcher</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                     <h5>Things I enjoy binging on:</h5>
