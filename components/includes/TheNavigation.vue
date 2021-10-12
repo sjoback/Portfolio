@@ -5,14 +5,14 @@
 
         <ColorChanger />
 
-        <ul class="nav-list">
+        <!-- <ul class="nav-list">
             <li>
                 <nuxt-link to="#">Binge watcher</nuxt-link>
             </li>
             <li>
                 <nuxt-link to="#">Say What's up!</nuxt-link>
             </li>
-        </ul>
+        </ul> -->
         <!-- <ChatBot /> -->
     </div>
 </template>

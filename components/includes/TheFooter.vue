@@ -3,7 +3,11 @@
         <div class="footer-inner">
             <div class="footer-inner__outro">
                 <img src="/favicon.ico" alt="Joakim Sjöbäck">
-                <h2><span>"</span>Good artists copy, great artists steal<span>"</span></h2>
+                <div class="outro-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <h1>Good artists copy, great artists steal</h1>
+                    <i class="fas fa-quote-right"></i>
+                </div>
                 <!-- <span>Or you know.. buying a plane ticket</span> -->
             </div>
 
@@ -57,6 +61,7 @@ export default {
 footer {
     @include flex;
     background: $purple;
+    background: linear-gradient(to bottom,#7a19f1,#332179);
     padding: 80px 20px;
     width: 100%;
     box-sizing: border-box;
@@ -77,18 +82,20 @@ footer {
                 margin: auto;
             }
 
-            h2 {
-                font-size: 32px;
-                font-weight: 200;
+            .outro-quote {
+                @include flex;
                 @include spacing(margin,6,top);
-                opacity: .7;
 
-                span {
-                    font-weight: bold;
-                    margin: 0 8px;
-                    font-style: italic;
-                    display: inline-block;
-                    font-family: 'Sofadi One', cursive;
+                h1 {
+                    text-transform: uppercase;
+                    font-size: 32px;
+                    margin: 0 15px;
+                    font-weight: 200;
+                }
+
+                i {
+                    margin-top: -20px;
+                    font-size: 22px;
                 }
             }
         }

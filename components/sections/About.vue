@@ -13,6 +13,28 @@ section {
     background: $purple;
     color: $white;
     position: relative;
+    background: linear-gradient(to bottom,#7a19f1,#332179);
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 400px;
+        opacity: .1;
+        bottom: -100px;
+        left: 0;
+        background: url('~assets/images/wave.svg');
+        background-size: cover;
+        z-index: 2;
+    }
+
+    &:after {
+        transform: scaleX(-1);
+        height: 320px;
+        opacity: .05;
+    }
+
 
     .section-inner {
         text-align: center;
@@ -20,6 +42,19 @@ section {
 
         img {
             @include size(200px);
+            position: relative;
+
+            &:after {
+                // position: absolute;
+                position: relative;
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: red;
+                border-radius: 200px;
+                left: -10px;
+                top: 10px;
+            }
         }
 
         h2 {

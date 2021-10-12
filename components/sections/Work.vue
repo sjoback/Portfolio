@@ -162,6 +162,7 @@ section {
                                 text-align: left;
                                 width: auto;
                                 margin: 0;
+                                font-size: 32px;
 
                                 @include device(mobile) {
                                     margin-top: 40px;

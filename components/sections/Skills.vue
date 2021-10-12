@@ -5,7 +5,7 @@
                 <div class="container-inner">
                     <img src="/images/designer.png" alt="Designer">
                     <h2>Designer</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <p>I enjoy designing with vibrant colors, clean patterns and a 'less is more' mindset.</p>
 
                     <h5>Things I enjoy designing:</h5>
                     <p>Simplistic design, Beautiful colors, Clean patterns</p>
@@ -23,9 +23,9 @@
                 <div class="container-inner">
                     <img src="/images/developer.png" alt="Front-end Developer">
                     <h2>Front-end Developer</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                    <h5>Things I enjoy designing:</h5>
-                    <p>Born and bread Vue-head. Other frameworks are sweet, Vue is sweeter.</p>
+                    <p>I like clean, SEO-optimized & easily digestible code. I love & live in the browser.</p>
+                    <h5>Frameworks I enjoy:</h5>
+                    <p>Born and bread Vue-head. I've dabbled in React & Laravel.</p>
                     <h5>How I do it:</h5>
                     <ul>
                         <li>Vue</li>
@@ -40,7 +40,7 @@
                 <div class="container-inner">
                     <img src="/images/bingewatcher.png" alt="Bing watcher">
                     <h2>Binge watcher</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+                    <p>When I need to find inspiration or creativity I enjoy watching something intriguing.</p>
                     <h5>Things I enjoy binging on:</h5>
                     <p>Comedy, Drama, Sci Fi, Documentaries</p>
                     <h5>A few series I recommend:</h5>

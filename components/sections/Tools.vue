@@ -5,14 +5,17 @@
 
             <div class="section-inner__grid">
                 <ul>
-                    <li>
-                        <a href="#" target="_blank"><i class="fab fa-github-alt"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-npm"></i></a>
-                        <span>Base-CSS</span>
-                        <p>Basic package containing mixins & css-classes.</p>
+                    <li
+                        v-for="tool in tools"
+                        v-addClass="{threshold: .5, class: 'stagger'}"
+                    >
+                        <a :href="tool.github" target="_blank"><i class="fab fa-github-alt"></i></a>
+                        <a :href="tool.npm" target="_blank"><i class="fab fa-npm"></i></a>
+                        <span>{{ tool.span }}</span>
+                        <p>{{ tool.paragraph }}</p>
                     </li>
 
-                    <li>
+                    <!-- <li>
                         <a href="#" target="_blank"><i class="fab fa-github-alt"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-npm"></i></a>
                         <span>Vue-components</span>
@@ -31,7 +34,7 @@
                         <a href="#" target="_blank"><i class="fab fa-npm"></i></a>
                         <span>Boilerplate</span>
                         <p>A boilerplate for a Nuxtjs-Prismic project.</p>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -43,6 +46,42 @@ export default {
     data() {
         return {
             tab: 2
+        }
+    },
+    computed: {
+        tools() {
+            return [
+                {
+                    github: 'https://github.com/sjoback/Vue-components',
+                    npm: 'https://www.npmjs.com/package/@leetajz/vue-components',
+                    span: 'Vue-components',
+                    paragraph: 'Package containing components designed for a Nuxtjs-Prismic project.'
+                },
+                {
+                    github: 'https://github.com/sjoback/Vue-directive',
+                    npm: 'https://www.npmjs.com/package/@leetajz/vue-directive',
+                    span: 'Vue-directive',
+                    paragraph: 'Package using the IntersectionObserver for easily integrated animations.'
+                },
+                {
+                    github: '',
+                    npm: '',
+                    span: 'Boilerplate',
+                    paragraph: 'A boilerplate for a Nuxtjs-Prismic project.'
+                },
+                {
+                    github: '',
+                    npm: '',
+                    span: '',
+                    paragraph: ''
+                },
+                {
+                    github: '',
+                    npm: '',
+                    span: '',
+                    paragraph: ''
+                }
+            ]
         }
     }
 }
@@ -72,6 +111,7 @@ section {
                     width: 100%;
                     @include grid(1,10px);
                     text-align: center;
+                    opacity: 0;
 
                     i {
                         color: $purple;
@@ -90,6 +130,27 @@ section {
                     p {
                         flex: 2;
                         margin-left: 20px;
+                    }
+                }
+
+                .stagger {
+                    animation: stagger .3s ease-in forwards;
+                }
+
+                @for $i from 1 through 10 {
+                    $delay: .10s;
+
+                    .stagger:nth-child( #{$i} ) { animation-delay: $delay * $i; }
+                }
+
+                @keyframes stagger {
+                    from {
+                        opacity: 1;
+                        transform: scale(.8);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
                     }
                 }
             }

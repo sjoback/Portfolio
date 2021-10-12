@@ -2,7 +2,7 @@
     <section class="banner">
         <div class="section-inner">
             <h1>DESIGNER, FRONT-END DEVELOPER & BINGE WATCHER</h1>
-            <h5>A sentence with something fun in it.</h5>
+            <h2>A sentence with something fun in it.</h2>
         </div>
     </section>
 </template>
@@ -37,8 +37,11 @@ section.banner {
     .section-inner {
         color: $white;
 
-        h5 {
-            @include font-size(20px, 10px);
+        h2 {
+            font-family: $fontText;
+            font-weight: 200;
+            @include font-size(24px, 0px);
+            margin-top: 10px;
         }
     }
 }
