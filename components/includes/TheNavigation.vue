@@ -1,6 +1,6 @@
 <template>
     <div class="nav">
-        <img src="/favicon.ico" alt="" class="nav-logo">
+        <img src="/favicon.ico" alt="Joakim Sjöbäck" load="eager" class="nav-logo">
 
         <!-- <ColorChanger /> -->
 

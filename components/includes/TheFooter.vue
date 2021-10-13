@@ -2,7 +2,7 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-inner__outro">
-                <img src="/favicon.ico" alt="Joakim Sjöbäck">
+                <img src="/favicon.ico" alt="Joakim Sjöbäck" load="lazy">
                 <div class="outro-quote">
                     <!-- <i class="fas fa-quote-left"></i> -->
                     <h1><span>"</span> Good artists copy, great artists steal <span>"</span></h1>

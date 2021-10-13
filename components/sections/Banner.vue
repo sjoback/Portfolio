@@ -12,8 +12,13 @@ section.banner {
     position: relative;
     background: linear-gradient(to bottom,#7a19f1,#332179);
     background-attachment: fixed;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: 160px;
+    padding-bottom: 100px;
+
+    @include device(pad) {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
 
     &:before,
     &:after {
