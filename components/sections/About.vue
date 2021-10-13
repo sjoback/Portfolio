@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="section-inner">
-            <img src="/portfolio/images/avatar.png" alt="">
+            <img src="/images/avatar.png" alt="">
             <h2>Hi! It's me.</h2>
             <p>
                 Just your average 31-year old guy living in Mölndal with a passion

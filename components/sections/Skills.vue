@@ -69,7 +69,7 @@ section {
         height: 34px;
         top: -34px;
         left: 0;
-        background: url('/portfolio/images/bg-slim.png');
+        background: url('/images/bg-slim.png');
         background-size: 100% 100%;
         z-index: 2;
     }
