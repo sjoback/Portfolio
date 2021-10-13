@@ -7,9 +7,9 @@
                     <h2>Designer</h2>
                     <p>I enjoy designing with vibrant colors, clean patterns and a 'less is more' mindset.</p>
 
-                    <h5>Things I enjoy designing:</h5>
+                    <p class="title">Things I enjoy designing:</p>
                     <p>Simplistic design, Beautiful colors, Clean patterns</p>
-                    <h5>Tools I use:</h5>
+                    <p class="title">Tools I use:</p>
                     <ul>
                         <li>Adobe Photoshop</li>
                         <li>Adobe Illustrator</li>
@@ -24,9 +24,9 @@
                     <img src="/images/developer.webp" alt="Front-end Developer" load="lazy">
                     <h2>Front-end Developer</h2>
                     <p>I like clean, SEO-optimized & easily digestible code. I love & live in the browser.</p>
-                    <h5>Frameworks I enjoy:</h5>
+                    <p class="title">Frameworks I enjoy:</p>
                     <p>Born and bread Vue-head. I've dabbled in React & Laravel.</p>
-                    <h5>How I do it:</h5>
+                    <p class="title">How I do it:</p>
                     <ul>
                         <li>Vue</li>
                         <li>React</li>
@@ -41,9 +41,9 @@
                     <img src="/images/bingewatcher.webp" alt="Bing watcher" load="lazy">
                     <h2>Binge watcher</h2>
                     <p>When I need to find inspiration or creativity I enjoy watching something intriguing.</p>
-                    <h5>Things I enjoy binging on:</h5>
+                    <p class="title">Things I enjoy binging on:</p>
                     <p>Comedy, Drama, Sci Fi, Documentaries</p>
-                    <h5>A few series I recommend:</h5>
+                    <p class="title">A few series I recommend:</p>
                     <ul>
                         <li>The Office(US)</li>
                         <li>How I met your mother</li>
@@ -138,7 +138,7 @@ section {
             }
 
             p { text-align: center; }
-            h5 {
+            p.title {
                 color: $purple;
                 font-weight: 500;
                 margin-top: 40px;
