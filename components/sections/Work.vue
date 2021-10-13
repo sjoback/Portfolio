@@ -21,7 +21,7 @@
 
                             <p v-html="product.desc"></p>
 
-                            <a :href="product.url" target="_blank">Visit site</a>
+                            <a :href="product.url" rel="noreferrer"  target="_blank">Visit site</a>
                         </div>
                     </div>
                 </div>
