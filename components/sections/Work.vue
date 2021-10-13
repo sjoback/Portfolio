@@ -10,7 +10,11 @@
                     class="grid-inner"
                 >
                     <div class="container">
-                        <img :src="product.img" alt=""/>
+                        <img
+                            :src="product.img"
+                            :alt="product.name"
+                            load="lazy"
+                        />
                     </div>
                     <div class="container">
                         <div>
@@ -21,7 +25,13 @@
 
                             <p v-html="product.desc"></p>
 
-                            <a :href="product.url" rel="noreferrer"  target="_blank">Visit site</a>
+                            <a
+                                :href="product.url"
+                                rel="noreferrer"
+                                target="_blank"
+                            >
+                                Visit site
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -69,7 +79,7 @@ export default {
                     url: 'https://compinero.com'
                 },
                 {
-                    img: '/images/work-aok.png',
+                    img: '/images/work-aok.webp',
                     name: 'AlltOmKreditkort.se',
                     launched: '2021',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',

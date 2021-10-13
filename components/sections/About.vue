@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="section-inner">
-            <img src="/images/avatar.png" alt="It's me!">
+            <img src="/images/avatar.webp" alt="It's me!" load="lazy">
             <h2>Hi! It's me.</h2>
             <p>
                 Just your average 31-year old guy living in Mölndal with a passion
