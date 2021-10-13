@@ -1,15 +1,13 @@
 <template>
     <transition name="fade">
         <div class="loader flex" v-if="open">
-            <AnimatedText />
+
         </div>
     </transition>
 </template>
 
 <script>
-    import AnimatedText from '@/components/Svg.vue'
     export default {
-        components: { AnimatedText },
         data() {
             return {
                 open: true
