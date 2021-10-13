@@ -5,18 +5,23 @@
 
             <div class="section-inner__grid">
                 <div
-                    v-for="(product,index) in products"
-                    v-addClass="{threshold: .5, class: 'animate'}"
-                    class="grid-inner"
+                v-for="(product,index) in products"
+                class="grid-inner"
                 >
-                    <div class="container">
+                    <div
+                    class="container"
+                    v-animate="{threshold: .3, animation: 'slideRight' }"
+                    >
                         <img
                             :src="product.img"
                             :alt="product.name"
                             load="lazy"
                         />
                     </div>
-                    <div class="container">
+                    <div
+                    class="container"
+                    v-animate="{threshold: .3, animation: 'slideLeft' }"
+                    >
                         <div>
                             <div class="container-head">
                                 <h2>{{product.name}}</h2>
@@ -26,9 +31,9 @@
                             <p v-html="product.desc"></p>
 
                             <a
-                                :href="product.url"
-                                rel="noreferrer"
-                                target="_blank"
+                            :href="product.url"
+                            rel="noreferrer"
+                            target="_blank"
                             >
                                 Visit site
                             </a>
@@ -42,37 +47,32 @@
 
 <script>
 export default {
-    data() {
-        return {
-            tab: 2
-        }
-    },
     computed: {
         products() {
             return [
                 {
-                    img: '/images/work-kreditkort.png',
+                    img: '/images/work-kreditkort.webp',
                     name: 'Kreditkort.com',
                     launched: '2019',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://kreditkort.com'
                 },
                 {
-                    img: '/images/work-bettingguide.png',
+                    img: '/images/work-bettingguide.webp',
                     name: 'BettingGuide.com',
                     launched: '2020',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://bettingguide.com'
                 },
                 {
-                    img: '/images/work-compary.png',
+                    img: '/images/work-compary.webp',
                     name: 'Compary.com',
                     launched: '2020',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on simplicity, digital profile & page speed.',
                     url: 'https://compary.com'
                 },
                 {
-                    img: '/images/work-compinero.png',
+                    img: '/images/work-compinero.webp',
                     name: 'Compinero.com',
                     launched: '2020',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
@@ -86,7 +86,7 @@ export default {
                     url: 'https://alltomkreditkort.se'
                 },
                 {
-                    img: '/images/work-lånen.png',
+                    img: '/images/work-lånen.webp',
                     name: 'Lånen.se',
                     launched: '2021',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
@@ -121,7 +121,6 @@ section {
                 animation: animate .3s ease-in forwards;
             }
             .grid-inner {
-                opacity: 0;
                 @include grid(1, 40px);
 
                 @include device(pad) {
@@ -134,13 +133,14 @@ section {
 
                 .container {
                     img {
-                        @include size(250px, auto);
+                        @include size(250px, 153px);
+
                         @include device(pad) {
-                            @include size(300px, auto);
+                            @include size(300px, 183px);
                         }
 
                         @include device(desktop) {
-                            @include size(500px, auto);
+                            @include size(500px, 305px);
                         }
                     }
 
@@ -166,7 +166,6 @@ section {
                                 text-align: left;
                                 width: auto;
                                 margin: 0;
-                                font-size: 32px;
 
                                 @include device(mobile) {
                                     margin-top: 40px;
@@ -223,11 +222,32 @@ section {
 @keyframes animate {
     from {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateX(-20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slideRight {
+    from{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes slideLeft {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
     }
 }
 </style>
