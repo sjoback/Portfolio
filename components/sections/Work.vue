@@ -41,42 +41,42 @@ export default {
         products() {
             return [
                 {
-                    img: '/portfolio/images/work-kreditkort.png',
+                    img: '/images/work-kreditkort.png',
                     name: 'Kreditkort.com',
                     launched: '2019',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://kreditkort.com'
                 },
                 {
-                    img: '/portfolio/images/work-bettingguide.png',
+                    img: '/images/work-bettingguide.png',
                     name: 'BettingGuide.com',
                     launched: '2020',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://bettingguide.com'
                 },
                 {
-                    img: '/portfolio/images/work-compary.png',
+                    img: '/images/work-compary.png',
                     name: 'Compary.com',
                     launched: '2020',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on simplicity, digital profile & page speed.',
                     url: 'https://compary.com'
                 },
                 {
-                    img: '/portfolio/images/work-compinero.png',
+                    img: '/images/work-compinero.png',
                     name: 'Compinero.com',
                     launched: '2020',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://compinero.com'
                 },
                 {
-                    img: '/portfolio/images/work-aok.png',
+                    img: '/images/work-aok.png',
                     name: 'AlltOmKreditkort.se',
                     launched: '2021',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
                     url: 'https://alltomkreditkort.se'
                 },
                 {
-                    img: '/portfolio/images/work-lånen.png',
+                    img: '/images/work-lånen.png',
                     name: 'Lånen.se',
                     launched: '2021',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
