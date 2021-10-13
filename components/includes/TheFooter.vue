@@ -4,9 +4,9 @@
             <div class="footer-inner__outro">
                 <img src="/favicon.ico" alt="Joakim Sjöbäck">
                 <div class="outro-quote">
-                    <i class="fas fa-quote-left"></i>
-                    <h1>Good artists copy, great artists steal</h1>
-                    <i class="fas fa-quote-right"></i>
+                    <!-- <i class="fas fa-quote-left"></i> -->
+                    <h1><span>"</span> Good artists copy, great artists steal <span>"</span></h1>
+                    <!-- <i class="fas fa-quote-right"></i> -->
                 </div>
                 <!-- <span>Or you know.. buying a plane ticket</span> -->
             </div>
@@ -20,7 +20,7 @@
                         :href="social.url"
                         :alt="social.name"
                         target="_blank"
-                        rel="noreferrer" 
+                        rel="noreferrer"
                     >
                         <i :class="social.icon"></i>
                     </a>
@@ -89,14 +89,18 @@ footer {
 
                 h1 {
                     text-transform: uppercase;
-                    font-size: 32px;
+                    @include font-size(32px, 20px);
                     margin: 0 15px;
                     font-weight: 200;
-                }
 
-                i {
-                    margin-top: -20px;
-                    font-size: 22px;
+                    @include device(mobile) {
+                        // line-height: 0;
+                        margin: 15px 0;
+                    }
+
+                    span {
+                        font-style: italic;
+                    }
                 }
             }
         }

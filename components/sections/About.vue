@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class="section-inner">
-            <img src="/images/avatar.png" alt="">
+            <img src="/images/avatar.png" alt="It's me!">
             <h2>Hi! It's me.</h2>
             <p>
                 Just your average 31-year old guy living in Mölndal with a passion
@@ -12,14 +12,14 @@
 
             <p>
                 I enjoy working in a fast-paced environment and thrive when given
-                creative freedom. In my current position I'm wearing many different
-                hats since I develop, design and maintain everthing from our own
-                internal system to all of our external products.
+                creative freedom. In my current position I wear many different
+                hats: I design, develop and maintain everthing from our own
+                internal systems to all of our external products.
             </p>
 
             <p>
                 As seen in many of my projects I enjoy mixing vibrant colors with
-                simplistic icons and very clean patterns.
+                simplistic design, icons and clean patterns.
             </p>
 
             <p>

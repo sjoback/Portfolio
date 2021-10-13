@@ -42,12 +42,12 @@ export default {
                     span: 'Vue-directive',
                     paragraph: 'Package using the IntersectionObserver for easily integrated animations.'
                 },
-                {
-                    github: '',
-                    npm: '',
-                    span: 'Boilerplate',
-                    paragraph: 'A boilerplate for a Nuxtjs-Prismic project.'
-                },
+                // {
+                //     github: '',
+                //     npm: '',
+                //     span: 'Boilerplate',
+                //     paragraph: 'A boilerplate for a Nuxtjs-Prismic project.'
+                // },
                 // {
                 //     github: '',
                 //     npm: '',
@@ -78,7 +78,15 @@ section {
             width: 100%;
 
             ul {
-                @include grid(3, 60px);
+                @include grid(1, 60px);
+
+                @include device(pad) {
+                    @include grid(2, 60px);
+                }
+
+                @include device(desktop) {
+                    @include grid(3, 60px);
+                }
 
                 li {
                     width: 100%;

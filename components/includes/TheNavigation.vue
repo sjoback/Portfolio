@@ -32,12 +32,11 @@ export default {
     left: 0;
     width: 100%;
     z-index: 99;
-    height: 80px;
     box-sizing: border-box;
-    padding: 0 40px;
+    padding: 20px;
 
     &-logo {
-        @include size(50px);
+        @include size(60px);
     }
 
     &-list {
