@@ -1,6 +1,6 @@
 export default {
-    // target: 'static',
-    mode: 'spa',
+    target: 'static',
+    // mode: 'spa',
     router: {
         base: '/portfolio/'
     },
