@@ -1,9 +1,9 @@
 export default {
     target: 'static',
     // mode: 'spa',
-    router: {
-        base: '/portfolio/'
-    },
+    // router: {
+    //     base: '/portfolio/'
+    // },
     head: {
         title: 'Joakim Sjöbäck | Designer, Front-end developer & binge watcher',
         meta: [
