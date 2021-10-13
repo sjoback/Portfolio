@@ -20,6 +20,7 @@
                         :href="social.url"
                         :alt="social.name"
                         target="_blank"
+                        rel="noreferrer" 
                     >
                         <i :class="social.icon"></i>
                     </a>

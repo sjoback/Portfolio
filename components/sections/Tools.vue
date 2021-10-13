@@ -9,8 +9,8 @@
                         v-for="tool in tools"
                         v-addClass="{threshold: .5, class: 'stagger'}"
                     >
-                        <a :href="tool.github" target="_blank"><i class="fab fa-github-alt"></i></a>
-                        <a :href="tool.npm" target="_blank"><i class="fab fa-npm"></i></a>
+                        <a :href="tool.github" rel="noreferrer" target="_blank"><i class="fab fa-github-alt"></i></a>
+                        <a :href="tool.npm" rel="noreferrer"  target="_blank"><i class="fab fa-npm"></i></a>
                         <span>{{ tool.span }}</span>
                         <p>{{ tool.paragraph }}</p>
                     </li>
