@@ -78,7 +78,11 @@ section {
             width: 100%;
 
             ul {
-                @include grid(3, 60px);
+                @include grid(1, 60px);
+
+                @include device(pad) {
+                    @include grid(3, 60px);
+                }
 
                 li {
                     width: 100%;

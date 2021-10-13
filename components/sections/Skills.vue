@@ -61,7 +61,8 @@
 section {
     padding: 40px 20px;
     position: relative;
-
+    margin-top: 1px;
+    
     &:after {
         position: absolute;
         content: "";
