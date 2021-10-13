@@ -1,9 +1,30 @@
 <template>
     <section>
         <div class="section-inner">
-            <img src="~/assets/images/avatar.png" alt="">
+            <img src="/portfolio/images/avatar.png" alt="">
             <h2>Hi! It's me.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>
+                Just your average 31-year old guy living in Mölndal with a passion
+                for design & code. Currently working as lead designer and
+                lead front-end developer at an affiliate company, running sites in
+                personal finance and online gambling.
+            </p>
+
+            <p>
+                I enjoy working in a fast-paced environment and thrive when given
+                creative freedom. In my current position I'm wearing many different
+                hats since I develop, design and maintain everthing from our own
+                internal system to all of our external products.
+            </p>
+
+            <p>
+                As seen in many of my projects I enjoy mixing vibrant colors with
+                simplistic icons and very clean patterns.
+            </p>
+
+            <p>
+                Now enough about me. Scroll down and have a look at what I've been doing lately. Enjoy!
+            </p>
         </div>
     </section>
 </template>
@@ -40,6 +61,10 @@ section {
         text-align: center;
         width: 700px;
 
+        p {
+            margin: 15px 0;
+        }
+
         img {
             @include size(200px);
             position: relative;
@@ -58,7 +83,8 @@ section {
         }
 
         h2 {
-            @include spacing(margin,8,(top, bottom));
+            @include spacing(margin,4,bottom);
+            @include spacing(margin,8,top);
         }
     }
 }

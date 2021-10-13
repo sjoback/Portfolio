@@ -1,5 +1,9 @@
 export default {
-    target: 'static',
+    // target: 'static',
+    mode: 'spa',
+    router: {
+        base: '/portfolio/'
+    },
     head: {
         title: 'Joakim Sjöbäck | Designer, Front-end developer & binge watcher',
         meta: [
@@ -46,12 +50,8 @@ export default {
             '@/assets/css/vars/_vars.scss',
             '@/assets/css/vars/_colors.scss',
             '@/assets/css/vars/_mixins.scss'
-            // '@/node_modules/@swegaming-ab/base-css/src/mixins/main.scss'
         ]
     },
 
-    build: {
-        extend (config, ctx) {
-        }
-    }
+    build: {}
 }

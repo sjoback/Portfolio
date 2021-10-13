@@ -3,7 +3,7 @@
         <div class="section-inner">
             <div class="container">
                 <div class="container-inner">
-                    <img src="/images/designer.png" alt="Designer">
+                    <img src="/portfolio/images/designer.png" alt="Designer">
                     <h2>Designer</h2>
                     <p>I enjoy designing with vibrant colors, clean patterns and a 'less is more' mindset.</p>
 
@@ -21,7 +21,7 @@
 
             <div class="container">
                 <div class="container-inner">
-                    <img src="/images/developer.png" alt="Front-end Developer">
+                    <img src="/portfolio/images/developer.png" alt="Front-end Developer">
                     <h2>Front-end Developer</h2>
                     <p>I like clean, SEO-optimized & easily digestible code. I love & live in the browser.</p>
                     <h5>Frameworks I enjoy:</h5>
@@ -38,7 +38,7 @@
 
             <div class="container">
                 <div class="container-inner">
-                    <img src="/images/bingewatcher.png" alt="Bing watcher">
+                    <img src="/portfolio/images/bingewatcher.png" alt="Bing watcher">
                     <h2>Binge watcher</h2>
                     <p>When I need to find inspiration or creativity I enjoy watching something intriguing.</p>
                     <h5>Things I enjoy binging on:</h5>
@@ -69,7 +69,7 @@ section {
         height: 34px;
         top: -34px;
         left: 0;
-        background: url('~assets/images/bg-slim.png');
+        background: url('/portfolio/images/bg-slim.png');
         background-size: 100% 100%;
         z-index: 2;
     }

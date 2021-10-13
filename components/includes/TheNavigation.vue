@@ -1,9 +1,8 @@
 <template>
     <div class="nav">
-        <img src="/favicon.ico" alt="" class="nav-logo">
-        <!-- <img :src="require('@/static/favicon.ico')" alt="" class="nav-logo"> -->
+        <img src="/portfolio/favicon.ico" alt="" class="nav-logo">
 
-        <ColorChanger />
+        <!-- <ColorChanger /> -->
 
         <!-- <ul class="nav-list">
             <li>
@@ -21,12 +20,7 @@
 import ChatBot from '@/components/ChatBot.vue';
 import ColorChanger from '@/components/ColorChanger.vue';
 export default {
-    components: { ChatBot, ColorChanger },
-    methods: {
-        emit() {
-            // emit to layout so open chatbot with appropriate question/answer
-        }
-    }
+    components: { ChatBot, ColorChanger }
 }
 </script>
 

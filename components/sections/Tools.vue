@@ -14,27 +14,6 @@
                         <span>{{ tool.span }}</span>
                         <p>{{ tool.paragraph }}</p>
                     </li>
-
-                    <!-- <li>
-                        <a href="#" target="_blank"><i class="fab fa-github-alt"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-npm"></i></a>
-                        <span>Vue-components</span>
-                        <p>Package containing components designed for a Nuxtjs-Prismic project.</p>
-                    </li>
-
-                    <li>
-                        <a href="#" target="_blank"><i class="fab fa-github-alt"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-npm"></i></a>
-                        <span>Vue-directive</span>
-                        <p>Package using the IntersectionObserver for easily integrated animations.</p>
-                    </li>
-
-                    <li>
-                        <a href="#" target="_blank"><i class="fab fa-github-alt"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-npm"></i></a>
-                        <span>Boilerplate</span>
-                        <p>A boilerplate for a Nuxtjs-Prismic project.</p>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -69,18 +48,12 @@ export default {
                     span: 'Boilerplate',
                     paragraph: 'A boilerplate for a Nuxtjs-Prismic project.'
                 },
-                {
-                    github: '',
-                    npm: '',
-                    span: '',
-                    paragraph: ''
-                },
-                {
-                    github: '',
-                    npm: '',
-                    span: '',
-                    paragraph: ''
-                }
+                // {
+                //     github: '',
+                //     npm: '',
+                //     span: '',
+                //     paragraph: ''
+                // },
             ]
         }
     }
