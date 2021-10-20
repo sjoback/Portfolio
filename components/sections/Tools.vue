@@ -94,10 +94,18 @@ section {
                     text-align: center;
                     opacity: 0;
 
+                    a:first-child {
+                        i {
+                            color: $purple;
+                            &:hover { color: $darkpurple; }
+                        }
+                    }
+
                     i {
-                        color: $purple;
+                        color: $orange;
                         font-size: 46px;
-                        &:hover { color: $darkpurple; }
+                        transition: .15s ease-in-out;
+                        &:hover { color: $darkorange; }
                     }
 
                     span {
