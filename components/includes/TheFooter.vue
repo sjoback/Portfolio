@@ -99,7 +99,8 @@ footer {
                     }
 
                     span {
-                        font-style: italic;
+                        color: $orange;
+                        font-size: 32px;
                     }
                 }
             }
@@ -112,7 +113,7 @@ footer {
             li {
                 @include size(60px);
                 @include border-radius(100px);
-                @include border(all, 2px, $darkpurple);
+                @include border(all, 2px, $orange);
                 transition: .15s ease-in-out;
 
                 &:hover { background: $darkpurple; }

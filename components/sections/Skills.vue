@@ -114,6 +114,12 @@ section {
 
             &-inner {
                 @include flex(center,start);
+                text-align: center;
+                @include grid(1, 30px);
+
+                h2 {
+                    
+                }
             }
 
             &:nth-child(2) {
@@ -126,7 +132,8 @@ section {
 
             img {
                 @include size(80px);
-                margin-bottom: 40px;
+                // margin-bottom: 40px;
+                margin: auto;
 
                 @include device(pad){
                     @include size(110px);
@@ -141,8 +148,8 @@ section {
             p.title {
                 color: $purple;
                 font-weight: 500;
-                margin-top: 40px;
-                margin-bottom: 10px;
+                // margin-top: 40px;
+                // margin-bottom: 10px;
             }
 
             ul {

@@ -1,8 +1,17 @@
 <template>
     <section class="banner">
         <div class="section-inner">
-            <h1>DESIGNER, FRONT-END DEVELOPER & BINGE WATCHER</h1>
-            <h2>A sentence with something fun in it.</h2>
+            <div class="container">
+                <h2>Joakim Sjöbäck</h2>
+                <h1>Designer</h1>
+                <h1>Front-end Developer</h1>
+                <h1>Binge Watcher</h1>
+                <h2>A sentence with something fun in it.</h2>
+            </div>
+
+            <div class="container">
+                <img src="/images/banner-geo.webp" alt="It's me!" load="lazy">
+            </div>
         </div>
     </section>
 </template>
@@ -41,12 +50,36 @@ section.banner {
 
     .section-inner {
         color: $white;
+        @include grid(1, 40px);
+        width: 1300px;
+
+        @include device(pad) {
+            @include grid(2, 40px);
+        }
+
+        .container {
+            text-align: center;
+            @include device(pad) {
+                text-align: left;
+            }
+
+            &:last-child {
+                @include flex;
+
+                img {
+                    width: 500px;
+                    height: auto;
+                    max-width: 100%
+                }
+            }
+        }
 
         h2 {
             font-family: $fontText;
-            font-weight: 200;
+            font-weight: 500;
             @include font-size(24px, 0px);
-            margin-top: 10px;
+            color: $orange;
+            margin: 10px 0;
         }
     }
 }
