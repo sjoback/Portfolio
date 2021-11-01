@@ -63,17 +63,17 @@ section {
     position: relative;
     margin-top: 1px;
 
-    &:after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 34px;
-        top: -34px;
-        left: 0;
-        background: url('/images/bg-slim.png');
-        background-size: 100% 100%;
-        z-index: 2;
-    }
+    // &:after {
+    //     position: absolute;
+    //     content: "";
+    //     width: 100%;
+    //     height: 34px;
+    //     top: -34px;
+    //     left: 0;
+    //     background: url('/images/bg-slim.png');
+    //     background-size: 100% 100%;
+    //     z-index: 2;
+    // }
 
     // &:before {
     //     position: absolute;
@@ -107,6 +107,14 @@ section {
             @include spacing(padding,8);
             background: $white;
 
+            &:nth-child(2) {
+                @include border((top, bottom));
+
+                @include device(pad) {
+                    @include border((left, right));
+                }
+            }
+
             @media screen and (min-width: 700px) {
                 flex: 1;
                 width: auto;
@@ -116,23 +124,10 @@ section {
                 @include flex(center,start);
                 text-align: center;
                 @include grid(1, 30px);
-
-                h2 {
-                    
-                }
-            }
-
-            &:nth-child(2) {
-                @include border((top, bottom));
-
-                @include device(pad) {
-                    @include border((left, right));
-                }
             }
 
             img {
                 @include size(80px);
-                // margin-bottom: 40px;
                 margin: auto;
 
                 @include device(pad){
@@ -148,8 +143,6 @@ section {
             p.title {
                 color: $purple;
                 font-weight: 500;
-                // margin-top: 40px;
-                // margin-bottom: 10px;
             }
 
             ul {

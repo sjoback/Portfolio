@@ -8,7 +8,7 @@
     box-sizing: border-box;
 
     @include device(pad) {
-        padding: 100px 20px;
+        padding: 100px 40px;
     }
 
     &-inner {
@@ -22,11 +22,9 @@
 section.banner {
 
     .section-inner {
-        // max-width: 600px;
 
         h1,
         span {
-            // text-align: center;
             width: 100%;
             display: block;
         }

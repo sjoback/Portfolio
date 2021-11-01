@@ -5,23 +5,18 @@
 
             <div class="section-inner__grid">
                 <div
-                v-for="(product,index) in products"
-                class="grid-inner"
+                    v-for="(product,index) in products"
+                    class="grid-inner"
                 >
-                    <div
-                    class="container"
-                    v-animate="{threshold: .3, animation: 'slideRight' }"
-                    >
+                    <div class="container">
                         <img
                             :src="product.img"
                             :alt="product.name"
                             load="lazy"
                         />
                     </div>
-                    <div
-                    class="container"
-                    v-animate="{threshold: .3, animation: 'slideLeft' }"
-                    >
+
+                    <div class="container">
                         <div>
                             <div class="container-head">
                                 <h2>{{product.name}}</h2>
@@ -31,9 +26,9 @@
                             <p v-html="product.desc"></p>
 
                             <a
-                            :href="product.url"
-                            rel="noreferrer"
-                            target="_blank"
+                                :href="product.url"
+                                rel="noreferrer"
+                                target="_blank"
                             >
                                 Visit site
                             </a>
@@ -149,7 +144,7 @@ section {
                     }
 
                     &:last-child {
-                        @include flex;
+                        @include flex(start);
 
                         div {
                             @include flex;
@@ -166,14 +161,14 @@ section {
                                 text-align: left;
                                 width: auto;
                                 margin: 0;
-
+                                
                                 @include device(mobile) {
-                                    margin-top: 40px;
+                                    margin-top: 20px;
                                 }
                             }
 
                             span {
-                                background: $purple;
+                                background: $orange;
                                 padding: 5px;
                                 border-radius: 3px;
                                 color: $white;
@@ -194,8 +189,8 @@ section {
 
                         p {
                             @include spacing(margin,6,(bottom,top));
-                            text-align: center;
                             width: 100%;
+                            text-align: center;
 
                             @include device(pad) {
                                 text-align: left;
@@ -204,11 +199,12 @@ section {
 
                         a {
                             background: $purple;
-                            padding: 15px 30px;
+                            padding: 25px 40px;
                             font-family: $fontText;
                             letter-spacing: .5px;
                             color: $white;
                             border-radius: 50px;
+                            max-width: 200px;
                             transition: .15s ease-in-out;
 
                             &:hover { background: $darkpurple; }
