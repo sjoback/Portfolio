@@ -25,8 +25,6 @@
 
                             <p v-html="product.desc"></p>
 
-                            <hr>
-
                             <a
                                 :href="product.url"
                                 rel="noreferrer"
@@ -163,6 +161,10 @@ section {
                                 text-align: left;
                                 width: auto;
                                 margin: 0;
+                                
+                                @include device(mobile) {
+                                    margin-top: 20px;
+                                }
                             }
 
                             span {
@@ -188,18 +190,11 @@ section {
                         p {
                             @include spacing(margin,6,(bottom,top));
                             width: 100%;
+                            text-align: center;
 
                             @include device(pad) {
                                 text-align: left;
                             }
-                        }
-
-                        hr {
-                            border: none;
-                            height: 2px;
-                            background: $orange;
-                            width: 100px;
-                            display: none;
                         }
 
                         a {
