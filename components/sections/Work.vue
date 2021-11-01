@@ -15,7 +15,7 @@
                             load="lazy"
                         />
                     </div>
-                    
+
                     <div class="container">
                         <div>
                             <div class="container-head">
@@ -25,10 +25,12 @@
 
                             <p v-html="product.desc"></p>
 
+                            <hr>
+
                             <a
-                            :href="product.url"
-                            rel="noreferrer"
-                            target="_blank"
+                                :href="product.url"
+                                rel="noreferrer"
+                                target="_blank"
                             >
                                 Visit site
                             </a>
@@ -144,7 +146,7 @@ section {
                     }
 
                     &:last-child {
-                        @include flex;
+                        @include flex(start);
 
                         div {
                             @include flex;
@@ -161,10 +163,6 @@ section {
                                 text-align: left;
                                 width: auto;
                                 margin: 0;
-
-                                @include device(mobile) {
-                                    margin-top: 40px;
-                                }
                             }
 
                             span {
@@ -189,7 +187,6 @@ section {
 
                         p {
                             @include spacing(margin,6,(bottom,top));
-                            text-align: center;
                             width: 100%;
 
                             @include device(pad) {
@@ -197,13 +194,22 @@ section {
                             }
                         }
 
+                        hr {
+                            border: none;
+                            height: 2px;
+                            background: $orange;
+                            width: 100px;
+                            display: none;
+                        }
+
                         a {
                             background: $purple;
-                            padding: 15px 30px;
+                            padding: 25px 40px;
                             font-family: $fontText;
                             letter-spacing: .5px;
                             color: $white;
                             border-radius: 50px;
+                            max-width: 200px;
                             transition: .15s ease-in-out;
 
                             &:hover { background: $darkpurple; }

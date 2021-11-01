@@ -3,6 +3,7 @@
         <div class="section-inner">
             <img src="/images/avatar.webp" alt="It's me!" load="lazy">
             <h2>Hi! It's me.</h2>
+            <hr>
             <p>
                 Just your average 31-year old guy living in Mölndal with a passion
                 for design & code. Currently working as lead designer and
@@ -61,16 +62,29 @@ section {
         text-align: center;
         width: 700px;
 
-        p {
-            margin: 15px 0;
+        h2 {
+            @include spacing(margin,4,bottom);
+            @include spacing(margin,8,top);
+            width: 100%;
+            text-align: center;
+            @include font-size(46px);
         }
+
+        hr {
+            background: $orange;
+            width: 300px;
+            height: 7px;
+            border: none;
+            margin: 20px 0;
+        }
+
+        p { margin: 15px 0; }
 
         img {
             @include size(200px);
             position: relative;
 
             &:after {
-                // position: absolute;
                 position: relative;
                 content: "";
                 width: 100%;
@@ -80,13 +94,6 @@ section {
                 left: -10px;
                 top: 10px;
             }
-        }
-
-        h2 {
-            @include spacing(margin,4,bottom);
-            @include spacing(margin,8,top);
-            width: 100%;
-            text-align: center;
         }
     }
 }
