@@ -10,7 +10,8 @@
             </div>
 
             <div class="container">
-                <img src="/images/banner-geo.webp" alt="It's me!" load="lazy">
+                <img src="/images/avatar1.webp" alt="It's me!" load="eager">
+                <!-- <img src="/images/banner-geo.webp" alt="It's me!" load="eager" class="bg"> -->
             </div>
         </div>
     </section>
@@ -21,12 +22,14 @@ section.banner {
     position: relative;
     background: linear-gradient(to bottom,#7a19f1,#332179);
     background-attachment: fixed;
-    padding-top: 160px;
-    padding-bottom: 100px;
+    // padding-top: 160px;
+    // padding-bottom: 160px;
+    box-sizing: border-box;
+    height: 85vh;
 
     @include device(pad) {
-        padding-top: 200px;
-        padding-bottom: 200px;
+        // padding-top: 200px;
+        // padding-bottom: 200px;
     }
 
     &:before,
@@ -50,7 +53,7 @@ section.banner {
 
     .section-inner {
         color: $white;
-        @include grid(1, 40px);
+        @include grid(1, 80px);
         width: 1300px;
 
         @include device(pad) {
@@ -65,11 +68,29 @@ section.banner {
 
             &:last-child {
                 @include flex;
+                position: relative;
 
                 img {
-                    width: 500px;
-                    height: auto;
-                    max-width: 100%
+                    max-width: 100%;
+                    @include size(250px,auto);
+                    position: relative;
+
+                    @include device(pad) {
+                        @include size(300px,auto);
+                    }
+
+                    @include device(desktop) {
+                        @include size(400px,auto);
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        @include size(400px);
+                        background: $orange;
+                        top: -40px;
+                        right: -40px;
+                    }
                 }
             }
         }

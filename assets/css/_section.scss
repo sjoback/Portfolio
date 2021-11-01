@@ -8,7 +8,7 @@
     box-sizing: border-box;
 
     @include device(pad) {
-        padding: 100px 20px;
+        padding: 100px 40px;
     }
 
     &-inner {

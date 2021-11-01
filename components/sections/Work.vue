@@ -5,23 +5,18 @@
 
             <div class="section-inner__grid">
                 <div
-                v-for="(product,index) in products"
-                class="grid-inner"
+                    v-for="(product,index) in products"
+                    class="grid-inner"
                 >
-                    <div
-                    class="container"
-                    v-animate="{threshold: .3, animation: 'slideRight' }"
-                    >
+                    <div class="container">
                         <img
                             :src="product.img"
                             :alt="product.name"
                             load="lazy"
                         />
                     </div>
-                    <div
-                    class="container"
-                    v-animate="{threshold: .3, animation: 'slideLeft' }"
-                    >
+                    
+                    <div class="container">
                         <div>
                             <div class="container-head">
                                 <h2>{{product.name}}</h2>
@@ -173,7 +168,7 @@ section {
                             }
 
                             span {
-                                background: $purple;
+                                background: $orange;
                                 padding: 5px;
                                 border-radius: 3px;
                                 color: $white;

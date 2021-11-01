@@ -85,6 +85,8 @@ section {
         h2 {
             @include spacing(margin,4,bottom);
             @include spacing(margin,8,top);
+            width: 100%;
+            text-align: center;
         }
     }
 }

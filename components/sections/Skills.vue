@@ -63,17 +63,17 @@ section {
     position: relative;
     margin-top: 1px;
 
-    &:after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 34px;
-        top: -34px;
-        left: 0;
-        background: url('/images/bg-slim.png');
-        background-size: 100% 100%;
-        z-index: 2;
-    }
+    // &:after {
+    //     position: absolute;
+    //     content: "";
+    //     width: 100%;
+    //     height: 34px;
+    //     top: -34px;
+    //     left: 0;
+    //     background: url('/images/bg-slim.png');
+    //     background-size: 100% 100%;
+    //     z-index: 2;
+    // }
 
     // &:before {
     //     position: absolute;
@@ -118,11 +118,13 @@ section {
                 @include grid(1, 30px);
 
                 h2 {
-                    
+
                 }
             }
 
             &:nth-child(2) {
+                // border-color: $purple!important;
+                // border-width: 2px!important;
                 @include border((top, bottom));
 
                 @include device(pad) {
