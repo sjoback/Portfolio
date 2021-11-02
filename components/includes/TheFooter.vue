@@ -21,6 +21,7 @@
                         :alt="social.name"
                         target="_blank"
                         rel="noreferrer"
+                        :aria-label="social.name"
                     >
                         <i :class="social.icon"></i>
                     </a>
@@ -39,12 +40,12 @@ export default {
             return [
                 {
                     name: 'github',
-                    url: '',
+                    url: 'https://github.com/sjoback',
                     icon: 'fab fa-github-alt'
                 },
                 {
                     name: 'instagram',
-                    url: '',
+                    url: 'https://www.instagram.com/josjoback/',
                     icon: 'fab fa-instagram'
                 },
                 {
