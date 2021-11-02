@@ -12,7 +12,7 @@
                         <a
                             :href="tool.github"
                             rel="noreferrer"
-                            :aria-label="social.span"
+                            :aria-label="tool.span"
                             target="_blank"
                         >
                             <i class="fab fa-github-alt"></i>
@@ -20,7 +20,7 @@
                         <a
                             :href="tool.npm"
                             rel="noreferrer"
-                            :aria-label="social.span"
+                            :aria-label="tool.span"
                             target="_blank"
                         >
                                 <i class="fab fa-npm"></i>
