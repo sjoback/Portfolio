@@ -57,7 +57,7 @@ export default {
                     name: 'BettingGuide.com',
                     launched: '2020',
                     desc: 'Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.',
-                    url: 'https://bettingguide.com'
+                    url: 'https://bettingguide-dev.web.app/in'
                 },
                 {
                     img: '/images/work-compary.webp',
@@ -161,7 +161,7 @@ section {
                                 text-align: left;
                                 width: auto;
                                 margin: 0;
-                                
+
                                 @include device(mobile) {
                                     margin-top: 20px;
                                 }

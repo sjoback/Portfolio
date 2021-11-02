@@ -27,7 +27,15 @@ section.banner {
     background: linear-gradient(to bottom,#7a19f1,#332179);
     background-attachment: fixed;
     box-sizing: border-box;
-    height: 85vh;
+
+    @include device(mobile) {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    @include device(pad) {
+        height: 85vh;
+    }
 
     &:before,
     &:after {
@@ -49,7 +57,7 @@ section.banner {
 
     .section-inner {
         color: $white;
-        @include grid(1, 80px);
+        @include grid(1, 40px);
         width: 1300px;
 
         @include device(pad) {
@@ -68,7 +76,7 @@ section.banner {
 
                 img {
                     max-width: 100%;
-                    @include size(250px,auto);
+                    @include size(200px,auto);
                     position: relative;
 
                     @include device(pad) {
