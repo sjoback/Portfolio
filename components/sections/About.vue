@@ -6,9 +6,9 @@
             <hr />
             <p>
                 Just your average 32-year old guy living in Mölndal with a
-                passion for design & code. Currently working as lead designer
-                and lead front-end developer at an affiliate company, running
-                sites in personal finance and online gambling.
+                passion for design & code. Currently working as front-end
+                developer at a media company. Tech stack includes Vue, React,
+                NextJS, Flutter and Wordpress.
             </p>
 
             <p>
