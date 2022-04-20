@@ -7,13 +7,17 @@
                     <h1>Designer</h1>
                     <h1>Front-end Developer</h1>
                     <h1>Binge Watcher</h1>
-                    <h2>A sentence with something fun in it.</h2>
+                    <h2>A sentence with something clever.</h2>
                 </div>
             </transition>
 
             <transition name="banner-image" appear>
                 <div class="container">
-                    <img src="/images/avatar1.webp" alt="It's me!" load="eager">
+                    <img
+                        src="/images/avatar1.webp"
+                        alt="It's me!"
+                        load="eager"
+                    />
                     <!-- <img src="/images/banner-geo.webp" alt="It's me!" load="eager" class="bg"> -->
                 </div>
             </transition>
@@ -24,7 +28,7 @@
 <style lang="scss" scoped>
 section.banner {
     position: relative;
-    background: linear-gradient(to bottom,#7a19f1,#332179);
+    background: linear-gradient(to bottom, #7a19f1, #332179);
     background-attachment: fixed;
     box-sizing: border-box;
 
@@ -42,10 +46,10 @@ section.banner {
         position: absolute;
         content: "";
         @include size(100%, 400px);
-        opacity: .1;
+        opacity: 0.1;
         bottom: -100px;
         left: 0;
-        background: url('~assets/images/wave.svg');
+        background: url("~assets/images/wave.svg");
         background-size: cover;
         z-index: 2;
     }
@@ -76,15 +80,15 @@ section.banner {
 
                 img {
                     max-width: 100%;
-                    @include size(200px,auto);
+                    @include size(200px, auto);
                     position: relative;
 
                     @include device(pad) {
-                        @include size(300px,auto);
+                        @include size(300px, auto);
                     }
 
                     @include device(desktop) {
-                        @include size(400px,auto);
+                        @include size(400px, auto);
                     }
 
                     &:after {
@@ -117,22 +121,22 @@ section.banner {
 
         &:before,
         &:after {
-            opacity: .05;
+            opacity: 0.05;
         }
     }
 }
 .white {
     section.banner {
-        background: rgba(239, 235, 221, .3);
+        background: rgba(239, 235, 221, 0.3);
         height: 100vh;
 
         &:before,
         &:after {
-            opacity: .5;
+            opacity: 0.5;
         }
 
         .section-inner {
-            color: #222;;
+            color: #222;
 
             h5 {
                 @include font-size(20px, 10px);
