@@ -3,9 +3,16 @@
         <div class="section-inner">
             <div class="container">
                 <div class="container-inner">
-                    <img src="/images/designer.webp" alt="Designer" load="eager">
+                    <img
+                        src="/images/designer.webp"
+                        alt="Designer"
+                        load="eager"
+                    />
                     <h2>Designer</h2>
-                    <p>I enjoy designing with vibrant colors, clean patterns and a 'less is more' mindset.</p>
+                    <p>
+                        I enjoy designing with vibrant colors, clean patterns
+                        and a 'less is more' mindset.
+                    </p>
 
                     <p class="title">Things I enjoy designing:</p>
                     <p>Simplistic design, Beautiful colors, Clean patterns</p>
@@ -13,6 +20,7 @@
                     <ul>
                         <li>Adobe Photoshop</li>
                         <li>Adobe Illustrator</li>
+                        <li>Figma</li>
                         <li>Invision</li>
                         <li>Paper sketch</li>
                     </ul>
@@ -21,26 +29,43 @@
 
             <div class="container">
                 <div class="container-inner">
-                    <img src="/images/developer.webp" alt="Front-end Developer" load="lazy">
+                    <img
+                        src="/images/developer.webp"
+                        alt="Front-end Developer"
+                        load="lazy"
+                    />
                     <h2>Front-end Developer</h2>
-                    <p>I like clean, SEO-optimized & easily digestible code. I love & live in the browser.</p>
+                    <p>
+                        I like clean, SEO-optimized & easily digestible code. I
+                        love & live in the browser.
+                    </p>
                     <p class="title">Frameworks I enjoy:</p>
-                    <p>Born and bread Vue-head. I've dabbled in React & Laravel.</p>
+                    <p>
+                        Born and bread Vue-head with a peaking interest in
+                        React. I've dabbled in Wordpress & Flutter.
+                    </p>
                     <p class="title">How I do it:</p>
                     <ul>
-                        <li>Vue</li>
-                        <li>React</li>
+                        <li>Vue & NuxtJS</li>
+                        <li>React & NextJS</li>
                         <li>Wordpress</li>
-                        <li>Laravel</li>
+                        <li>Flutter</li>
                     </ul>
                 </div>
             </div>
 
             <div class="container">
                 <div class="container-inner">
-                    <img src="/images/bingewatcher.webp" alt="Bing watcher" load="lazy">
+                    <img
+                        src="/images/bingewatcher.webp"
+                        alt="Bing watcher"
+                        load="lazy"
+                    />
                     <h2>Binge watcher</h2>
-                    <p>When I need to find inspiration or creativity I enjoy watching something intriguing.</p>
+                    <p>
+                        When I need to find inspiration or creativity I enjoy
+                        watching something intriguing.
+                    </p>
                     <p class="title">Things I enjoy binging on:</p>
                     <p>Comedy, Drama, Sci Fi, Documentaries</p>
                     <p class="title">A few series I recommend:</p>
@@ -89,7 +114,7 @@ section {
     // }
 
     .section-inner {
-        @include flex(center,stretch);
+        @include flex(center, stretch);
         position: relative;
         z-index: 3;
 
@@ -101,10 +126,10 @@ section {
         }
 
         .container {
-            @include flex(center,start);
+            @include flex(center, start);
             height: 100%;
             width: 100%;
-            @include spacing(padding,8);
+            @include spacing(padding, 8);
             background: $white;
 
             &:nth-child(2) {
@@ -121,7 +146,7 @@ section {
             }
 
             &-inner {
-                @include flex(center,start);
+                @include flex(center, start);
                 text-align: center;
                 @include grid(1, 30px);
             }
@@ -130,16 +155,18 @@ section {
                 @include size(80px);
                 margin: auto;
 
-                @include device(pad){
+                @include device(pad) {
                     @include size(110px);
                 }
 
-                @include device(desktop){
+                @include device(desktop) {
                     @include size(140px);
                 }
             }
 
-            p { text-align: center; }
+            p {
+                text-align: center;
+            }
             p.title {
                 color: $purple;
                 font-weight: 500;

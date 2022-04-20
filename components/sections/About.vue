@@ -1,30 +1,31 @@
 <template>
     <section>
         <div class="section-inner">
-            <img src="/images/avatar.webp" alt="It's me!" load="lazy">
+            <img src="/images/avatar.webp" alt="It's me!" load="lazy" />
             <h2>Hi! It's me.</h2>
-            <hr>
+            <hr />
             <p>
-                Just your average 31-year old guy living in Mölndal with a passion
-                for design & code. Currently working as lead designer and
-                lead front-end developer at an affiliate company, running sites in
-                personal finance and online gambling.
+                Just your average 32-year old guy living in Mölndal with a
+                passion for design & code. Currently working as lead designer
+                and lead front-end developer at an affiliate company, running
+                sites in personal finance and online gambling.
             </p>
 
             <p>
-                I enjoy working in a fast-paced environment and thrive when given
-                creative freedom. In my current position I wear many different
-                hats: I design, develop and maintain everthing from our own
-                internal systems to all of our external products.
+                I enjoy working in a fast-paced environment and thrive when
+                given creative freedom. My experience includes design,
+                developing and maintaining websites aswell as creating mobile
+                apps.
             </p>
 
             <p>
-                As seen in many of my projects I enjoy mixing vibrant colors with
-                simplistic design, icons and clean patterns.
+                As seen in many of my projects I enjoy mixing vibrant colors
+                with simplistic design, icons and clean patterns.
             </p>
 
             <p>
-                Now enough about me. Scroll down and have a look at what I've been doing lately. Enjoy!
+                Now enough about me. Scroll down and have a look at what I've
+                been doing lately. Enjoy!
             </p>
         </div>
     </section>
@@ -35,7 +36,7 @@ section {
     background: $purple;
     color: $white;
     position: relative;
-    background: linear-gradient(to bottom,#7a19f1,#332179);
+    background: linear-gradient(to bottom, #7a19f1, #332179);
 
     &:before,
     &:after {
@@ -43,10 +44,10 @@ section {
         content: "";
         width: 100%;
         height: 400px;
-        opacity: .1;
+        opacity: 0.1;
         bottom: -100px;
         left: 0;
-        background: url('~assets/images/wave.svg');
+        background: url("~assets/images/wave.svg");
         background-size: cover;
         z-index: 2;
     }
@@ -54,17 +55,16 @@ section {
     &:after {
         transform: scaleX(-1);
         height: 320px;
-        opacity: .05;
+        opacity: 0.05;
     }
-
 
     .section-inner {
         text-align: center;
         width: 700px;
 
         h2 {
-            @include spacing(margin,4,bottom);
-            @include spacing(margin,8,top);
+            @include spacing(margin, 4, bottom);
+            @include spacing(margin, 8, top);
             width: 100%;
             text-align: center;
             @include font-size(46px);
@@ -78,7 +78,9 @@ section {
             margin: 20px 0;
         }
 
-        p { margin: 15px 0; }
+        p {
+            margin: 15px 0;
+        }
 
         img {
             @include size(200px);
