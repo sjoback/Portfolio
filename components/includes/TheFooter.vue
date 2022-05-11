@@ -38,21 +38,22 @@ export default {
                 {
                     name: "github",
                     url: "https://github.com/sjoback",
-                    icon: "fab fa-github-alt",
+                    icon: "fab fa-github-alt"
                 },
                 {
                     name: "instagram",
                     url: "https://www.instagram.com/josjoback/",
-                    icon: "fab fa-instagram",
+                    icon: "fab fa-instagram"
                 },
                 {
                     name: "linkedin",
-                    url: "https://www.linkedin.com/in/joakim-sj%C3%B6b%C3%A4ck-8089a0110/",
-                    icon: "fab fa-linkedin-in",
-                },
+                    url:
+                        "https://www.linkedin.com/in/joakim-sj%C3%B6b%C3%A4ck-8089a0110/",
+                    icon: "fab fa-linkedin-in"
+                }
             ];
-        },
-    },
+        }
+    }
 };
 </script>
 

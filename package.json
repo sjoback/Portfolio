@@ -19,6 +19,10 @@
     },
     "devDependencies": {
         "@nuxtjs/style-resources": "^1.2.0",
+        "@typescript-eslint/eslint-plugin": "^5.23.0",
+        "@typescript-eslint/parser": "^5.23.0",
+        "eslint": "^8.15.0",
+        "eslint-plugin-vue": "^8.7.1",
         "prettier": "2.6.2"
     }
 }

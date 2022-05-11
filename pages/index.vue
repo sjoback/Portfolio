@@ -21,7 +21,7 @@ export default {
         Skills,
         About,
         Work,
-        Tools,
-    },
+        Tools
+    }
 };
 </script>
