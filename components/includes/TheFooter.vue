@@ -25,7 +25,9 @@
                 </li>
             </ul>
 
-            <div class="footer-inner__copy">Handcrafted by Me Ⓒ 2021</div>
+            <div class="footer-inner__copy">
+                Handcrafted by Me Ⓒ {{ new Date().getFullYear() }}
+            </div>
         </div>
     </footer>
 </template>
