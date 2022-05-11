@@ -1,23 +1,27 @@
-.page-enter-active, .page-leave-active {
-    transition: all .2s ease-in-out;
+.page-enter-active,
+.page-leave-active {
+    transition: all 0.2s ease-in-out;
 }
-.page-enter, .page-leave-to {
+.page-enter,
+.page-leave-to {
     transform: translateX(-25px);
     opacity: 0;
 }
 
-.fade-enter-active, .fade-leave-active {
-    transition: all .15s ease-in-out;
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.15s ease-in-out;
 }
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
     opacity: 0;
 }
 
 .pop-enter-active {
-    animation: pop .5s;
+    animation: pop 0.5s;
 }
 .pop-leave-active {
-    animation: pop .5s reverse;
+    animation: pop 0.5s reverse;
 }
 @keyframes pop {
     0% {
@@ -35,10 +39,10 @@
 }
 
 .nav-enter-active {
-    animation: nav .3s;
+    animation: nav 0.3s;
 }
 .nav-leave-active {
-    animation: nav .3s reverse;
+    animation: nav 0.3s reverse;
 }
 @keyframes nav {
     0% {

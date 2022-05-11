@@ -1,18 +1,18 @@
 <template>
-  <div :class="$store.state.activeColor">
-      <!-- <Loader /> -->
-      <Navbar />
+    <div :class="$store.state.activeColor">
+        <!-- <Loader /> -->
+        <Navbar />
 
-      <nuxt />
+        <nuxt />
 
-      <Footer />
-  </div>
+        <Footer />
+    </div>
 </template>
 <script>
-import Navbar from '@/components/includes/TheNavigation.vue';
-import Footer from '@/components/includes/TheFooter.vue';
-import Loader from '@/components/Loader.vue';
+import Navbar from "@/components/includes/TheNavigation.vue";
+import Footer from "@/components/includes/TheFooter.vue";
+import Loader from "@/components/Loader.vue";
 export default {
-    components: { Navbar, Footer, Loader }
-}
+    components: { Navbar, Footer, Loader },
+};
 </script>

@@ -1,10 +1,9 @@
 <template>
     <div class="color-changer">
-        <span @click="showDropdown =! showDropdown">Don't like the colors?<i class="fas fa-chevron-down"></i></span>
-        <ul
-            v-if="showDropdown"
-            class="color-changer__list"
-        >
+        <span @click="showDropdown = !showDropdown"
+            >Don't like the colors?<i class="fas fa-chevron-down"></i
+        ></span>
+        <ul v-if="showDropdown" class="color-changer__list">
             <li
                 v-for="color in colors"
                 :key="color"
@@ -22,20 +21,15 @@ export default {
     data() {
         return {
             showDropdown: false,
-            colors: [
-                'purple',
-                'black',
-                'white',
-                'red'
-            ]
-        }
+            colors: ["purple", "black", "white", "red"],
+        };
     },
     methods: {
         changeColor(color) {
             this.showDropdown = false;
-            this.$store.commit('SET_COLOR', color);
-        }
-    }
+            this.$store.commit("SET_COLOR", color);
+        },
+    },
 };
 </script>
 

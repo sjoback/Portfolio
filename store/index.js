@@ -1,14 +1,14 @@
 export const state = () => ({
     activeColor: undefined,
-    showChatBot: false
-})
+    showChatBot: false,
+});
 
 export const mutations = {
     SET_COLOR(state, color) {
-        state.activeColor = color
+        state.activeColor = color;
     },
 
     SHOW_CHATBOT(state, bool) {
-        state.showChatBot = bool
-    }
-}
+        state.showChatBot = bool;
+    },
+};

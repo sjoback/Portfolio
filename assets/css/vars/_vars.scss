@@ -1,24 +1,24 @@
-$fontText: 'Urbanist', sans-serif;
-$fontHeader: 'Londrina Solid', cursive;
+$fontText: "Urbanist", sans-serif;
+$fontHeader: "Londrina Solid", cursive;
 $border: (
-    'color': #e6e6e6,
-    'radius': 1px
+    "color": #e6e6e6,
+    "radius": 1px,
 );
 
 $sectionWidth: (
-    'standard': 900px,
-    'small': 700px,
-    'medium': 900px,
-    'large': 1100px,
+    "standard": 900px,
+    "small": 700px,
+    "medium": 900px,
+    "large": 1100px,
 );
 
 $spacing: (
-    'mobile': 4px,
-    'tablet': 4px,
-    'desktop': 5px
+    "mobile": 4px,
+    "tablet": 4px,
+    "desktop": 5px,
 );
 
 $breakpoints: (
-    'tablet': 600px,
-    'desktop': 900px
+    "tablet": 600px,
+    "desktop": 900px,
 );

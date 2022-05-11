@@ -7,7 +7,7 @@
                 <ul>
                     <li
                         v-for="tool in tools"
-                        v-addClass="{threshold: .5, class: 'stagger'}"
+                        v-addClass="{ threshold: 0.5, class: 'stagger' }"
                     >
                         <a
                             :href="tool.github"
@@ -23,7 +23,7 @@
                             :aria-label="tool.span"
                             target="_blank"
                         >
-                                <i class="fab fa-npm"></i>
+                            <i class="fab fa-npm"></i>
                         </a>
                         <span>{{ tool.span }}</span>
                         <p>{{ tool.paragraph }}</p>
@@ -38,23 +38,25 @@
 export default {
     data() {
         return {
-            tab: 2
-        }
+            tab: 2,
+        };
     },
     computed: {
         tools() {
             return [
                 {
-                    github: 'https://github.com/sjoback/Vue-components',
-                    npm: 'https://www.npmjs.com/package/@leetajz/vue-components',
-                    span: 'Vue-components',
-                    paragraph: 'Package containing components designed for a Nuxtjs-Prismic project.'
+                    github: "https://github.com/sjoback/Vue-components",
+                    npm: "https://www.npmjs.com/package/@leetajz/vue-components",
+                    span: "Vue-components",
+                    paragraph:
+                        "Package containing components designed for a Nuxtjs-Prismic project.",
                 },
                 {
-                    github: 'https://github.com/sjoback/Vue-directive',
-                    npm: 'https://www.npmjs.com/package/@leetajz/vue-directive',
-                    span: 'Vue-directive',
-                    paragraph: 'Package using the IntersectionObserver for easily integrated animations.'
+                    github: "https://github.com/sjoback/Vue-directive",
+                    npm: "https://www.npmjs.com/package/@leetajz/vue-directive",
+                    span: "Vue-directive",
+                    paragraph:
+                        "Package using the IntersectionObserver for easily integrated animations.",
                 },
                 // {
                 //     github: '',
@@ -68,10 +70,10 @@ export default {
                 //     span: '',
                 //     paragraph: ''
                 // },
-            ]
-        }
-    }
-}
+            ];
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -104,22 +106,26 @@ section {
 
                 li {
                     width: 100%;
-                    @include grid(1,10px);
+                    @include grid(1, 10px);
                     text-align: center;
                     opacity: 0;
 
                     a:first-child {
                         i {
                             color: $purple;
-                            &:hover { color: $darkpurple; }
+                            &:hover {
+                                color: $darkpurple;
+                            }
                         }
                     }
 
                     i {
                         color: $orange;
                         font-size: 46px;
-                        transition: .15s ease-in-out;
-                        &:hover { color: $darkorange; }
+                        transition: 0.15s ease-in-out;
+                        &:hover {
+                            color: $darkorange;
+                        }
                     }
 
                     span {
@@ -137,19 +143,21 @@ section {
                 }
 
                 .stagger {
-                    animation: stagger .3s ease-in forwards;
+                    animation: stagger 0.3s ease-in forwards;
                 }
 
                 @for $i from 1 through 10 {
-                    $delay: .10s;
+                    $delay: 0.1s;
 
-                    .stagger:nth-child( #{$i} ) { animation-delay: $delay * $i; }
+                    .stagger:nth-child(#{$i}) {
+                        animation-delay: $delay * $i;
+                    }
                 }
 
                 @keyframes stagger {
                     from {
                         opacity: 1;
-                        transform: scale(.8);
+                        transform: scale(0.8);
                     }
                     to {
                         opacity: 1;

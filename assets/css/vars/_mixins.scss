@@ -4,18 +4,22 @@
     $width: border width
     $color: border color
 */
-@mixin border( $sides: ( all ), $width: 1px, $color: map-get($border, 'color') ) {
+@mixin border(
+    $sides: (
+        all,
+    ),
+    $width: 1px,
+    $color: map-get($border, "color")
+) {
     border: 0;
     box-sizing: border-box;
 
     @each $side in $sides {
         @if $side == all {
             border: $width solid $color;
-        }
-        @else if $side == 0 {
+        } @else if $side == 0 {
             border: 0;
-        }
-        @else {
+        } @else {
             border-#{$side}: $width solid $color;
         }
     }
@@ -26,12 +30,11 @@
     $radius: radius amount
     $side: radius side
 */
-@mixin border-radius( $radius, $sides: ( all ) ) {
+@mixin border-radius($radius, $sides: (all)) {
     @each $side in $sides {
         @if $side == all {
             border-radius: $radius;
-        }
-        @else {
+        } @else {
             border-#{$side}-radius: $radius;
         }
     }
@@ -42,23 +45,31 @@
 */
 @mixin device($device) {
     @if $device == mobile {
-        @media screen and (max-width: map-get($breakpoints, tablet)) { @content; }
+        @media screen and (max-width: map-get($breakpoints, tablet)) {
+            @content;
+        }
     }
 
     @if $device == pad {
-        @media screen and (min-width: map-get($breakpoints, tablet)) { @content; }
+        @media screen and (min-width: map-get($breakpoints, tablet)) {
+            @content;
+        }
     }
 
     @if $device == padOnly {
-        @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) { @content; }
+        @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, desktop)) {
+            @content;
+        }
     }
 
     @if $device == desktop {
-        @media screen and (min-width: map-get($breakpoints, desktop)) { @content; }
-    }
-
-    @else {
-        @media screen and (min-width: $device) { @content; }
+        @media screen and (min-width: map-get($breakpoints, desktop)) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: $device) {
+            @content;
+        }
     }
 }
 
@@ -66,7 +77,7 @@
     $width
     $height
 */
-@mixin size( $width, $height: $width ) {
+@mixin size($width, $height: $width) {
     width: $width;
     height: $height;
 }
@@ -76,20 +87,31 @@
     $xAxis: horizontal flex direction
     $yAxis: vertical flex direction
 */
-@mixin flex( $xAxis: "", $yAxis: "" ) {
+@mixin flex($xAxis: "", $yAxis: "") {
     display: flex;
     flex-wrap: wrap;
 
-    @if $xAxis == 'start' { justify-content: flex-start; }
-    @else if $xAxis == 'end' { justify-content: flex-end; }
-    @else if $xAxis == 'between' { justify-content: space-between; }
-    @else if $xAxis == 'around' { justify-content: space-around; }
-    @else { justify-content: center; }
+    @if $xAxis == "start" {
+        justify-content: flex-start;
+    } @else if $xAxis == "end" {
+        justify-content: flex-end;
+    } @else if $xAxis == "between" {
+        justify-content: space-between;
+    } @else if $xAxis == "around" {
+        justify-content: space-around;
+    } @else {
+        justify-content: center;
+    }
 
-    @if $yAxis == 'start' { align-items: flex-start; }
-    @else if $yAxis == 'end' { align-items: flex-end; }
-    @else if $yAxis == 'stretch' { align-items: $yAxis; }
-    @else { align-items: center; }
+    @if $yAxis == "start" {
+        align-items: flex-start;
+    } @else if $yAxis == "end" {
+        align-items: flex-end;
+    } @else if $yAxis == "stretch" {
+        align-items: $yAxis;
+    } @else {
+        align-items: center;
+    }
 }
 
 /* FONT FAMILY */
@@ -102,7 +124,7 @@
     $size: font size
     $lineHeight: $size + $ratio
 */
-@mixin font-size( $size, $ratio: 6, $lineHeight: $size + $ratio ) {
+@mixin font-size($size, $ratio: 6, $lineHeight: $size + $ratio) {
     font-size: $size;
     line-height: $lineHeight;
 }
@@ -112,23 +134,23 @@
     $count: amount of aligned items
     $gap: space between items
 */
-@mixin grid( $count, $gap ) {
-  display: grid;
-  gap: $gap;
-  grid-template-columns: repeat( $count, 1fr );
+@mixin grid($count, $gap) {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat($count, 1fr);
 }
 
 /* PSUEDO
     $content
 */
-@mixin psuedo( $kind: after, $content: '' ) {
+@mixin psuedo($kind: after, $content: "") {
     &:#{$kind} {
         content: $content;
         @content;
     }
 }
 
-@mixin spacing( $decider, $multiplier, $sides: ( all ) ) {
+@mixin spacing($decider, $multiplier, $sides: (all)) {
     box-sizing: border-box;
 
     @each $side in $sides {
@@ -142,8 +164,7 @@
             @media screen and (min-width: map-get($breakpoints, desktop)) {
                 #{$decider}: map-get($spacing, desktop) * $multiplier;
             }
-        }
-        @else {
+        } @else {
             @media screen and (max-width: map-get($breakpoints, tablet)) {
                 #{$decider}-#{$side}: map-get($spacing, mobile) * $multiplier;
             }

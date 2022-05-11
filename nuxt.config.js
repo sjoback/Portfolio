@@ -6,54 +6,51 @@ export default {
     // },
     head: {
         htmlAttrs: {
-            lang: 'en'
+            lang: "en",
         },
-        title: 'Joakim Sjöbäck | Designer, Front-end developer & binge watcher',
+        title: "Joakim Sjöbäck | Designer, Front-end developer & binge watcher",
         meta: [
-            { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: process.env.npm_package_description || 'Designer, Front-end developer & binge watcher' }
+            { charset: "utf-8" },
+            {
+                name: "viewport",
+                content: "width=device-width, initial-scale=1",
+            },
+            {
+                hid: "description",
+                name: "description",
+                content:
+                    process.env.npm_package_description ||
+                    "Designer, Front-end developer & binge watcher",
+            },
         ],
-        link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-        ],
-        script: [
-            { src: 'https://kit.fontawesome.com/086f5d3908.js' }
-        ],
+        link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+        script: [{ src: "https://kit.fontawesome.com/086f5d3908.js" }],
     },
 
     pageTransition: {
-        name: 'page',
-        mode: 'out-in',
-        beforeEnter (el) {
+        name: "page",
+        mode: "out-in",
+        beforeEnter(el) {
             // Do something
-        }
+        },
     },
 
-    loading: { color: '#fff' },
+    loading: { color: "#fff" },
 
-    css: [
-        'assets/css/main.scss'
-    ],
+    css: ["assets/css/main.scss"],
 
-    plugins: [
-        '@/node_modules/@leetajz/vue-directive'
-    ],
+    plugins: ["@/node_modules/@leetajz/vue-directive"],
 
-    buildModules: [
-        '@nuxtjs/style-resources'
-    ],
+    buildModules: ["@nuxtjs/style-resources"],
 
-    modules: [
-        '@nuxtjs/style-resources'
-    ],
+    modules: ["@nuxtjs/style-resources"],
     styleResources: {
         scss: [
-            '@/assets/css/vars/_vars.scss',
-            '@/assets/css/vars/_colors.scss',
-            '@/assets/css/vars/_mixins.scss'
-        ]
+            "@/assets/css/vars/_vars.scss",
+            "@/assets/css/vars/_colors.scss",
+            "@/assets/css/vars/_mixins.scss",
+        ],
     },
 
-    build: {}
-}
+    build: {},
+};

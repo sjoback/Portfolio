@@ -1,4 +1,5 @@
-.section, section {
+.section,
+section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,9 +21,7 @@
 }
 
 section.banner {
-
     .section-inner {
-
         h1,
         span {
             width: 100%;
@@ -39,5 +38,4 @@ section.banner {
 }
 
 section.work {
-
 }

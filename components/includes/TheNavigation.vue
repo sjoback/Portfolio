@@ -1,6 +1,11 @@
 <template>
     <div class="nav">
-        <img src="/favicon.ico" alt="Joakim Sjöbäck" load="eager" class="nav-logo">
+        <img
+            src="/favicon.ico"
+            alt="Joakim Sjöbäck"
+            load="eager"
+            class="nav-logo"
+        />
 
         <!-- <ColorChanger /> -->
 
@@ -17,11 +22,11 @@
 </template>
 
 <script>
-import ChatBot from '@/components/ChatBot.vue';
-import ColorChanger from '@/components/ColorChanger.vue';
+import ChatBot from "@/components/ChatBot.vue";
+import ColorChanger from "@/components/ColorChanger.vue";
 export default {
-    components: { ChatBot, ColorChanger }
-}
+    components: { ChatBot, ColorChanger },
+};
 </script>
 
 <style lang="scss" scoped>

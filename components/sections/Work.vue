@@ -46,61 +46,54 @@ export default {
                     img: "/images/work-kreditkort.webp",
                     name: "Kreditkort.com",
                     launched: "2019",
-                    desc:
-                        "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
-                    url: "https://kreditkort.com"
+                    desc: "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
+                    url: "https://kreditkort.com",
                 },
                 {
                     img: "/images/work-bettingguide.webp",
                     name: "BettingGuide.com",
                     launched: "2020",
-                    desc:
-                        "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
-                    url: "https://bettingguide-dev.web.app/in"
+                    desc: "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
+                    url: "https://bettingguide-dev.web.app/in",
                 },
                 {
                     img: "/images/work-compary.webp",
                     name: "Compary.com",
                     launched: "2020",
-                    desc:
-                        "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on simplicity, digital profile & page speed.",
-                    url: "https://compary.com"
+                    desc: "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on simplicity, digital profile & page speed.",
+                    url: "https://compary.com",
                 },
                 {
                     img: "/images/work-compinero.webp",
                     name: "Compinero.com",
                     launched: "2020",
-                    desc:
-                        "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
-                    url: "https://compinero.com"
+                    desc: "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
+                    url: "https://compinero.com",
                 },
                 {
                     img: "/images/work-aok.webp",
                     name: "AlltOmKreditkort.se",
                     launched: "2021",
-                    desc:
-                        "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
-                    url: "https://alltomkreditkort.se"
+                    desc: "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
+                    url: "https://alltomkreditkort.se",
                 },
                 {
                     img: "/images/work-lånen.webp",
                     name: "Lånen.se",
                     launched: "2021",
-                    desc:
-                        "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
-                    url: "https://lånen.se"
+                    desc: "Designed with Photoshop. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
+                    url: "https://lånen.se",
                 },
                 {
                     img: "/images/work-kortio.webp",
                     name: "Kortio.se",
                     launched: "2021",
-                    desc:
-                        "Prototyping in Figma. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
-                    url: "https://kortio.se"
-                }
+                    desc: "Prototyping in Figma. <br> Built with NuxtJS & Prismic. <br> Focus on SEO-rankings & page speed.",
+                    url: "https://kortio.se",
+                },
             ];
-        }
-    }
+        },
+    },
 };
 </script>
 
