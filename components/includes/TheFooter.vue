@@ -2,20 +2,17 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-inner__outro">
-                <img src="/favicon.ico" alt="Joakim Sjöbäck" load="lazy">
+                <img src="/favicon.ico" alt="Joakim Sjöbäck" load="lazy" />
                 <div class="outro-quote">
-                    <!-- <i class="fas fa-quote-left"></i> -->
-                    <h1><span>"</span> Good artists copy, great artists steal <span>"</span></h1>
-                    <!-- <i class="fas fa-quote-right"></i> -->
+                    <h1>
+                        <span>"</span> Good artists copy, great artists steal
+                        <span>"</span>
+                    </h1>
                 </div>
-                <!-- <span>Or you know.. buying a plane ticket</span> -->
             </div>
 
             <ul class="footer-inner__socials">
-                <li
-                    v-for="(social, index) in socials"
-                    :key="index"
-                >
+                <li v-for="(social, index) in socials" :key="index">
                     <a
                         :href="social.url"
                         :alt="social.name"
@@ -28,7 +25,9 @@
                 </li>
             </ul>
 
-            <div class="footer-inner__copy">Handcrafted by Me Ⓒ 2021</div>
+            <div class="footer-inner__copy">
+                Handcrafted by Me Ⓒ {{ new Date().getFullYear() }}
+            </div>
         </div>
     </footer>
 </template>
@@ -39,31 +38,32 @@ export default {
         socials() {
             return [
                 {
-                    name: 'github',
-                    url: 'https://github.com/sjoback',
-                    icon: 'fab fa-github-alt'
+                    name: "github",
+                    url: "https://github.com/sjoback",
+                    icon: "fab fa-github-alt"
                 },
                 {
-                    name: 'instagram',
-                    url: 'https://www.instagram.com/josjoback/',
-                    icon: 'fab fa-instagram'
+                    name: "instagram",
+                    url: "https://www.instagram.com/josjoback/",
+                    icon: "fab fa-instagram"
                 },
                 {
-                    name: 'linkedin',
-                    url: 'https://www.linkedin.com/in/joakim-sj%C3%B6b%C3%A4ck-8089a0110/',
-                    icon: 'fab fa-linkedin-in'
+                    name: "linkedin",
+                    url:
+                        "https://www.linkedin.com/in/joakim-sj%C3%B6b%C3%A4ck-8089a0110/",
+                    icon: "fab fa-linkedin-in"
                 }
-            ]
+            ];
         }
-    },
-}
+    }
+};
 </script>
 
 <style lang="scss" scoped>
 footer {
     @include flex;
     background: $purple;
-    background: linear-gradient(to bottom,#7a19f1,#332179);
+    background: linear-gradient(to bottom, #7a19f1, #332179);
     padding: 80px 20px;
     width: 100%;
     box-sizing: border-box;
@@ -86,7 +86,7 @@ footer {
 
             .outro-quote {
                 @include flex;
-                @include spacing(margin,6,top);
+                @include spacing(margin, 6, top);
 
                 h1 {
                     text-transform: uppercase;
@@ -109,15 +109,17 @@ footer {
 
         &__socials {
             @include grid(3, 30px);
-            @include spacing(margin,10,(top,bottom));
+            @include spacing(margin, 10, (top, bottom));
 
             li {
                 @include size(60px);
                 @include border-radius(100px);
                 @include border(all, 2px, $orange);
-                transition: .15s ease-in-out;
+                transition: 0.15s ease-in-out;
 
-                &:hover { background: $darkpurple; }
+                &:hover {
+                    background: $darkpurple;
+                }
 
                 a {
                     color: $white;
@@ -131,7 +133,7 @@ footer {
         &__copy {
             font-family: $fontText;
             font-weight: 100;
-            opacity: .8;
+            opacity: 0.8;
             width: 100%;
             text-align: center;
             font-size: 14px;

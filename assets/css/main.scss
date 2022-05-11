@@ -1,16 +1,15 @@
 // @import '@/node_modules/@swegaming-ab/base-css/main.scss';
-@import 'reset';
-@import 'typography';
-@import 'buttons';
-@import 'transitions';
-@import 'section';
-
+@import "reset";
+@import "typography";
+@import "buttons";
+@import "transitions";
+@import "section";
 
 body {
     padding: 0;
     margin: 0;
     // background: #FBFBFB;
-    background: rgba(255, 255, 204, .2);
+    background: rgba(255, 255, 204, 0.2);
     background: #ffffff;
     color: #333;
 }
